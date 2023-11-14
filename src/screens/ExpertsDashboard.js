@@ -11,6 +11,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import chatIcon from "../assets/images/chatIcon.png";
+import ExpertsTools from "../assets/images/expbg.jpg";
 // var urlBackend = process.env.REACT_APP_API_KEY;
 const ExpertsDashboard = () => {
 //   const userdetails = JSON.parse(localStorage.getItem("userdetails"));
@@ -149,7 +150,7 @@ const ExpertsDashboard = () => {
 //     navigate("/Messenger");
 //   };
   return (
-    <div style={{ backgroundColor: "#f2f2f2", padding: "20px" }}>
+    <div style={{backgroundImage: `url(${ExpertsTools})`, padding: "20px", height:630, backgroundSize:'cover' }}>
       <ToastContainer
         position="top-right"
         autoClose={5000}

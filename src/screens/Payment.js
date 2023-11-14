@@ -131,7 +131,9 @@ const PaymentFormContent = ({ classes }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    // <form onSubmit={handleSubmit}>
+    <>
+    
       <TextField
         placeholder="Card Holder Name"
         style={{
@@ -144,7 +146,7 @@ const PaymentFormContent = ({ classes }) => {
       ></TextField>
       <CardElement className={classes.cardElement} />
       <TextField
-        placeholder="Card Holder Name"
+        placeholder="Address"
         style={{
           padding: 10,
           paddingLeft: 0,
@@ -154,7 +156,7 @@ const PaymentFormContent = ({ classes }) => {
         }}
       ></TextField>
       <TextField
-        placeholder="Card Holder Name"
+        placeholder="Phone Number"
         style={{
           padding: 10,
           paddingLeft: 0,
@@ -164,8 +166,8 @@ const PaymentFormContent = ({ classes }) => {
         }}
       ></TextField>
       <Button
-        type="submit"
-        disabled={!stripe}
+        // type="submit"
+        // disabled={!stripe}
         // className={classes.payButton}
         variant="contained"
         style={{
@@ -178,11 +180,12 @@ const PaymentFormContent = ({ classes }) => {
       >
         Pay
       </Button>
-      {error && <div className={classes.errorMessage}>Error: {error}</div>}
+    </>
+      /* {error && <div className={classes.errorMessage}>Error: {error}</div>}
       {paymentComplete && (
         <div className={classes.successMessage}>Payment successful!</div>
-      )}
-    </form>
+      )} */
+    // </form>
   );
 };
 

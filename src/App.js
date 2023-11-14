@@ -7,10 +7,11 @@ import Electricians from "./screens/Electricians";
 import AirConditioners from "./screens/AirConditioners";
 import CarPenters from "./screens/CarPenters";
 import Painters from "./screens/Painters";
-import ExpertsDashboard from "./screens/Experts";
+import ExpertsDashboard from "./screens/ExpertsDashboard";
 import SelectRole from "./screens/SelectRole";
 import ExpertVerification from "./screens/ExpertVerification";
 import PaymentForm from "./screens/Payment";
+import AboutPage from "./screens/About";
 // import ChooseSubject from "./screens/ChooseType";
 // import StudentWelcome from "./screens/StudentWelcome";
 // import StudentChooseLan from "./screens/StudentChooseLan";
@@ -38,9 +39,10 @@ export default function App() {
         <Route path="/painters" element={<Painters />} />
         <Route path="/airconditioners" element={<AirConditioners />} />
         <Route path="/selectRole" element={<SelectRole />} />
-        <Route path="/experts" element={<ExpertsDashboard />} />
+        <Route path="/expertsDashboard" element={<ExpertsDashboard />} />
         <Route path="/expertsVerification" element={<ExpertVerification />} />
         <Route path="/payment" element={<PaymentForm />} />
+        <Route path="/about" element={<AboutPage />} />
 
         {/* <Route element={<PublicRoutes />}>
           <Route path="/" element={<SignUpPage />} />

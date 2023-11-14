@@ -100,7 +100,7 @@ const ExpertVerification = () => {
         "♟️ Repair",
         "♟️ Emergency",
       ],
-      correctAnswer: "Repair",
+      correctAnswer: "♟️ Repair",
     },
     {
       question:
@@ -111,7 +111,7 @@ const ExpertVerification = () => {
         "♟️ Request a written estimate",
         "♟️ All of the above",
       ],
-      correctAnswer: "All of the above",
+      correctAnswer: "♟️ All of the above",
     },
     {
       question:
@@ -122,7 +122,7 @@ const ExpertVerification = () => {
         "♟️ Barter System",
         "♟️ None, its usually free",
       ],
-      correctAnswer: "Credit Card",
+      correctAnswer: "♟️ Credit Card",
     },
     {
       question:
@@ -133,18 +133,18 @@ const ExpertVerification = () => {
         "♟️ Leave your home unlocked",
         "♟️ Gather all necessary information",
       ],
-      correctAnswer: "Gather all necessary information",
+      correctAnswer: "♟️ Gather all necessary information",
     },
     {
       question:
         "How can you verify the reputation of a service professional before hiring them?",
       options: [
-        "Ask for their social security number",
-        "Send them money in advance",
-        "Read online reviews",
-        "None of the above",
+        "♟️ Ask for their social security number",
+        "♟️ Send them money in advance",
+        "♟️ Read online reviews",
+        "♟️ None of the above",
       ],
-      correctAnswer: "Read online reviews",
+      correctAnswer: "♟️ Read online reviews",
     },
     {
       question:
@@ -155,7 +155,7 @@ const ExpertVerification = () => {
         "♟️ Post a negative review without contacting them",
         "♟️ Sue them in court",
       ],
-      correctAnswer: "Contact the service provider to address the issue",
+      correctAnswer: "♟️ Contact the service provider to address the issue",
     },
     {
       question:
@@ -166,7 +166,7 @@ const ExpertVerification = () => {
         "♟️ Within a month",
         "♟️ There is no specific timeframe",
       ],
-      correctAnswer: "Within a few hours",
+      correctAnswer: "♟️ Within a few hours",
     },
   ];
 
@@ -191,27 +191,33 @@ const ExpertVerification = () => {
   };
 
   const checkAnswers = () => {
+    console.log("Checking Answers...");
     const correctAnswers = questions.map((question) => question.correctAnswer);
     const correctCount = correctAnswers.reduce(
       (count, correctAnswer, index) => {
-        if (correctAnswer === selectedAnswers[index]) {
+        if (correctAnswer.toLowerCase() === selectedAnswers[index].toLowerCase()) {
           return count + 1;
         }
+        
         return count;
       },
       0
     );
-
+    console.log("Correct Answers:", correctAnswers);
+    console.log("Selected Answers:", selectedAnswers);
+    
     if (correctCount >= 4) {
+      console.log("Quiz Passed!");
       // Navigate to the next screen (e.g., SuccessScreen)
       setQuizPassed(true);
       //   navigate('/mentotSubjectReg');
-      navigate("/experts");
+      navigate('/expertsDashboard');
     } else {
       // Redirect to the login page
 
       //   navigate('/chooseSubject');
-      navigate("/login");
+      console.log("Quiz failed!");
+      navigate("/services");
     }
   };
 

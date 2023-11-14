@@ -12,7 +12,7 @@ import pdf from "../assets/images/pdf.png";
 const AirConditioners = () => {
   //   const Lectures = JSON.parse(localStorage.getItem("Lectures"));
   //   const userdetails = JSON.parse(localStorage.getItem("userdetails"));
-  //   const navigate = useNavigate();
+    const navigate = useNavigate();
 
   //   const CreateConversation = async (receiver) => {
   //     const usersIds = {
@@ -92,7 +92,7 @@ const AirConditioners = () => {
         <Grid item xs={12} sm={6} md={4}>
           <Card
             style={{
-              width: "70%",
+              width: "85%",
               height: "100%",
               marginLeft: "auto",
               marginRight: "auto",
@@ -168,6 +168,7 @@ const AirConditioners = () => {
                 //   onClick={() => {
                 //     CreateConversation(data?.refOfUser);
                 //   }}
+                onClick={()=>navigate('/payment')}
                 style={{
                   display: "flex",
 
@@ -186,7 +187,7 @@ const AirConditioners = () => {
         <Grid item xs={12} sm={6} md={4}>
           <Card
             style={{
-              width: "70%",
+              width: "85%",
               height: "100%",
               marginLeft: "auto",
               marginRight: "auto",
@@ -262,6 +263,7 @@ const AirConditioners = () => {
                 //   onClick={() => {
                 //     CreateConversation(data?.refOfUser);
                 //   }}
+                onClick={()=>navigate('/payment')}
                 style={{
                   display: "flex",
 
@@ -280,7 +282,7 @@ const AirConditioners = () => {
         <Grid item xs={12} sm={6} md={4}>
           <Card
             style={{
-              width: "70%",
+              width: "85%",
               height: "100%",
               marginLeft: "auto",
               marginRight: "auto",
@@ -355,6 +357,7 @@ const AirConditioners = () => {
                 //   onClick={() => {
                 //     CreateConversation(data?.refOfUser);
                 //   }}
+                onClick={()=>navigate('/payment')}
                 style={{
                   display: "flex",
 

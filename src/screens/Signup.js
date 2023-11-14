@@ -9,7 +9,7 @@ import {
   Card,
 } from "@mui/material";
 import { css } from "@emotion/react";
-import signupImage from "../assets/images/connectlogo.jpeg";
+import signupImage from "../assets/images/1.jpg";
 import background from "../assets/images/back1.jpg";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -150,7 +150,7 @@ const SignUpPage = () => {
       pauseOnHover
       theme="light"
     />
-      <Card
+      {/* <Card
          style={{
           display: "flex",
         //   width: "400px",
@@ -163,10 +163,10 @@ const SignUpPage = () => {
           width: "1200px", // Adjust the card width as needed
 
         }}
-      >
+      > */}
         <div
           style={{
-            width: "50%",
+            width: "70%",
             // padding: "20px",
           }}
         >
@@ -203,7 +203,7 @@ const SignUpPage = () => {
                 sx={{
                   width: 100,
                   height: 100,
-                  marginTop: 5,
+                  marginTop: 2,
                   marginLeft: "auto",
                   marginRight: "auto",
                   borderWidth: 3,
@@ -225,7 +225,7 @@ const SignUpPage = () => {
           }
           <TextField
             style={{
-              marginTop: 60,
+              marginTop: 40,
               width: 350,
               borderRadius: 10,
               display: "flex",
@@ -303,7 +303,7 @@ const SignUpPage = () => {
         </div>
         <div
           style={{
-            width: "50%",
+            width: "100%",
             height: "100%", // Adjust the width of the image container
             // Add padding for space
             // backgroundColor: "pink",
@@ -331,7 +331,7 @@ const SignUpPage = () => {
             height: "100%",
           }}
         ></div>  */}
-       </Card>
+       {/* </Card> */}
     </div>
   );
 };

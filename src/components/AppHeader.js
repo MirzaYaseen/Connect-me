@@ -5,7 +5,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+  background: "linear-gradient(to right, #3498db 30%, #ff6b81 90%)",
   height: 80,
 }));
 
@@ -34,10 +34,10 @@ const Navbar = () => {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Connect Me
         </Typography>
-        <StyledButton color="inherit" >
+        <StyledButton color="inherit" onClick={()=>navigate('/selectRole')}>
           Home
         </StyledButton>
-        <StyledButton color="inherit" >
+        <StyledButton color="inherit" onClick={()=>navigate('/about')}>
           About
         </StyledButton>
         <StyledButton onClick={()=>navigate('/services')}  color="inherit">Services</StyledButton>

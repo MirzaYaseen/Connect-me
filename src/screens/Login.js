@@ -10,7 +10,7 @@ import {
 import { css } from "@emotion/react";
 import signupImage from "../assets/images/signup1.jpg";
 
-import background from "../assets/images/connectlogo.jpeg";
+import background from "../assets/images/1.jpg";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -97,7 +97,7 @@ const Login = () => {
         pauseOnHover
         theme="light"
       />
-      <Card
+      {/* <Card
         style={{
           display: "flex",
         //   width: "900px",
@@ -108,11 +108,11 @@ const Login = () => {
           boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
           width: "1200px", // Adjust the card width as needed
         }}
-      >
+      > */}
        
         <div
           style={{
-            width: "50%",
+            width: "70%",
             display: "flex",
             flexDirection: "column",
             paddingLeft: 20,
@@ -172,6 +172,7 @@ const Login = () => {
           </Button>
           <Button
             // onClick={handleSubmit}
+            onClick={()=>navigate('/selectRole')}
             variant="contained"
             style={{
               width: "250px",
@@ -197,7 +198,7 @@ const Login = () => {
         </div>
         <div
           style={{
-            width: "50%",
+            width: "100%",
             height: "100%", // Adjust the width of the image container
             // Add padding for space
             // backgroundColor: "pink",
@@ -213,7 +214,7 @@ const Login = () => {
             }}
           />
         </div>
-      </Card>
+      {/* </Card> */}
     </div>
   );
 };

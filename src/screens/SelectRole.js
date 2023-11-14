@@ -1,11 +1,11 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-
+import bg from "../assets/images/expbg.jpg";
 import axios from "axios";
 var url = process.env.REACT_APP_API_KEY;
 const SelectRole = () => {
-//   const navigate = useNavigate();
+  const navigate = useNavigate();
 //   const userdetails = JSON.parse(localStorage.getItem("userdetails"));
 
 //   const UpdateUserAsStudent = async (user) => {
@@ -34,7 +34,7 @@ const SelectRole = () => {
     <div
       style={{
         height: 670,
-        backgroundColor: "#E6F7FF",
+        // backgroundColor: "#E6F7FF",
         alignSelf: "center",
         display: "flex",
         alignItems: "center",
@@ -101,10 +101,11 @@ const SelectRole = () => {
             // onClick={() => {
             //   UpdateUserAsStudent("Student");
             // }}
+            onClick={()=>navigate('/services')}
             style={{
-              backgroundColor: "#12486B",
-              width: 300,
-              height: 40,
+              backgroundColor:'cornflowerblue',
+              width: 500,
+              height: 50,
               marginLeft: "auto",
               marginRight: "auto",
               display: "flex",
@@ -123,15 +124,17 @@ const SelectRole = () => {
             // onClick={() => {
             //   UpdateUserAsStudent("Mentor");
             // }}
+            onClick={()=>navigate('/expertsVerification')}
             style={{
-              backgroundColor: "#12486B",
-              width: 300,
-              height: 40,
+              backgroundColor: "pink",
+              width: 400,
+              height: 50,
               marginLeft: "auto",
               marginRight: "auto",
               display: "flex",
               borderRadius: 20,
-              color: "white",
+              color: "black",
+              
             }}
           >
             Continue as Provider
