@@ -132,7 +132,9 @@ const SignUpPage = () => {
       justifyContent: "center",
       alignItems: "center",
       width: "100%",
-      height: "100vh",
+      height: "85%",
+      
+      marginTop:100,
     // backgroundImage: `url(${background})`,
     
       overflow:'hidden'
@@ -172,11 +174,11 @@ const SignUpPage = () => {
         >
           <Typography
             style={{
-              marginTop: 5,
-              textAlign: "center",
-              fontSize: 30,
-              fontWeight: "500",
+              marginBottom: "20px",
+              fontSize: 35,
+              fontWeight: "600",
               color: "#212A3E",
+              textAlign: "center",
             }}
           >
             Create an Account
@@ -187,8 +189,8 @@ const SignUpPage = () => {
                 alt="Selected Avatar"
                 src={avatar}
                 sx={{
-                  width: 100,
-                  height: 100,
+                  width: 150,
+                  height: 150,
                   marginTop: 5,
                   marginLeft: "auto",
                   marginRight: "auto",
@@ -201,8 +203,8 @@ const SignUpPage = () => {
               <Avatar
                 alt="Default Avatar"
                 sx={{
-                  width: 100,
-                  height: 100,
+                  width: 150,
+                  height: 150,
                   marginTop: 2,
                   marginLeft: "auto",
                   marginRight: "auto",
@@ -226,7 +228,7 @@ const SignUpPage = () => {
           <TextField
             style={{
               marginTop: 40,
-              width: 350,
+              width: 500,
               borderRadius: 10,
               display: "flex",
               marginLeft: "auto",
@@ -242,7 +244,7 @@ const SignUpPage = () => {
           <TextField
             style={{
               marginTop: 30,
-              maxWidth: 350,
+              maxWidth: 500,
               borderRadius: 10,
               display: "flex",
               marginLeft: "auto",
@@ -258,7 +260,7 @@ const SignUpPage = () => {
           <TextField
             style={{
               marginTop: 30,
-              width: 350,
+              width: 500,
               borderRadius: 10,
               display: "flex",
               marginLeft: "auto",
@@ -282,7 +284,7 @@ const SignUpPage = () => {
               width: 250,
               marginTop: 50,
               borderRadius: 20,
-              backgroundColor: "#212A3E",
+              backgroundColor: "#87CEEB",
             }}
           >
             Sign up
@@ -296,6 +298,7 @@ const SignUpPage = () => {
               marginRight: "auto",
               marginTop: 10,
               fontSize: 12,
+              color:'grey'
             }}
           >
             Already have an account?

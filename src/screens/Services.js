@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Box, Card, Typography, Button } from "@mui/material";
+import { Box, Card, Typography, Button, Icon,IconButton  } from "@mui/material";
 import Image1 from "../assets/images/6.png";
 import Electircian from "../assets/images/electrician.jpg";
 import Air from "../assets/images/air.jpg";
 import Carpenter from "../assets/images/carpenter.jpg";
 import Painter from "../assets/images/painter.jpg";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 function Screen() {
   const navigate = useNavigate();
   const [selectedLanguages, setSelectedLanguages] = useState([]);
@@ -30,14 +30,15 @@ function Screen() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 10,
+        marginTop: 15,
         // height: "90vh",
         fontFamily: "Roboto",
         // overflow:'hidden'
         // backgroundColor: "#E6F7FF",
+       
       }}
     >
-      <Typography variant="h4" gutterBottom marginBottom={5}>
+      <Typography style={{ fontWeight:'600'}} variant="h4" gutterBottom marginBottom={5}>
         Choose a Service Category
       </Typography>
       <div
@@ -54,7 +55,7 @@ function Screen() {
             background: "none",
             marginRight: 30,
           }}
-          onClick={() => navigate("/electricians")}
+          onClick={() => navigate("/electricianServices")}
         >
           <Card
             sx={{
@@ -71,13 +72,19 @@ function Screen() {
               marginTop: 3,
             }}
           ></Card>
+           <IconButton color="primary" aria-label="forward" style={{marginLeft:'auto'}}>
+        <ArrowForwardIcon />
+      </IconButton>
           <Typography style={{ textAlign: "center", marginTop: 15 }}>
             Electrician
+          </Typography>
+          <Typography style={{ textAlign: "center", marginTop: 15, fontSize:12, color:'GrayText' }}>
+           12 services Available
           </Typography>
         </Button>
         <Button
           style={{ display: "flex", flexDirection: "column", marginRight: 30 }}
-          onClick={() => navigate("/airconditioners")}
+          onClick={()=>navigate('/airConditionerServices')}
         >
           <Card
             sx={{
@@ -94,13 +101,19 @@ function Screen() {
               marginTop: 3,
             }}
           ></Card>
+           <IconButton color="primary" aria-label="forward" style={{marginLeft:'auto'}}>
+        <ArrowForwardIcon />
+      </IconButton>
           <Typography style={{ textAlign: "center", marginTop: 15 }}>
             Air Conditioning
+          </Typography>
+          <Typography style={{ textAlign: "center", marginTop: 15, fontSize:12, color:'GrayText' }}>
+           12 services Available
           </Typography>
         </Button>
         <Button
           style={{ display: "flex", flexDirection: "column", marginRight: 30 }}
-          onClick={() => navigate("/carpenters")}
+          onClick={() => navigate("/carpenterServices")}
         >
           <Card
             sx={{
@@ -117,13 +130,19 @@ function Screen() {
               marginTop: 3,
             }}
           ></Card>
+          <IconButton color="primary" aria-label="forward" style={{marginLeft:'auto'}}>
+        <ArrowForwardIcon />
+      </IconButton>
           <Typography style={{ textAlign: "center", marginTop: 15 }}>
             Carpenter
+          </Typography>
+          <Typography style={{ textAlign: "center", marginTop: 15, fontSize:12, color:'GrayText' }}>
+           12 services Available
           </Typography>
         </Button>
         <Button
           style={{ display: "flex", flexDirection: "column", marginRight: 30 }}
-          onClick={() => navigate("/painters")}
+          onClick={() => navigate("/painterServices")}
         >
           <Card
             sx={{
@@ -140,8 +159,14 @@ function Screen() {
               marginTop: 3,
             }}
           ></Card>
+           <IconButton color="primary" aria-label="forward" style={{marginLeft:'auto'}}>
+        <ArrowForwardIcon />
+      </IconButton>
           <Typography style={{ textAlign: "center", marginTop: 15 }}>
             Painter
+          </Typography>
+          <Typography style={{ textAlign: "center", marginTop: 15, fontSize:12, color:'GrayText' }}>
+           12 services Available
           </Typography>
         </Button>
       </div>

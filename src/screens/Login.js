@@ -81,8 +81,10 @@ const Login = () => {
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        height: "100vh",
-        overflow:'hidden'
+        height: "85vh",
+        overflow:'hidden',
+        marginTop:100,
+        
       }}
     >
       <ToastContainer
@@ -116,28 +118,31 @@ const Login = () => {
             display: "flex",
             flexDirection: "column",
             paddingLeft: 20,
+            borderRadius:40
           }}
         >
           <Typography
             style={{
               marginBottom: "20px",
-              fontSize: 30,
-              fontWeight: "500",
+              fontSize: 35,
+              fontWeight: "600",
               color: "#212A3E",
               textAlign: "center",
+              
             }}
           >
-            Sign In
+            Sign In Now
           </Typography>
           <TextField
-            style={{
-                marginTop: 60,
-                width: 350,
-                borderRadius: 10,
-                display: "flex",
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
+           style={{
+            marginTop: 60,
+            width: 500,
+            borderRadius: 30,
+            display: "flex",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+         
             label="Email"
             margin="normal"
             value={email}
@@ -148,11 +153,12 @@ const Login = () => {
           <TextField
               style={{
               
-                width: 350,
+                width: 500,
                 borderRadius: 10,
                 display: "flex",
                 marginLeft: "auto",
                 marginRight: "auto",
+                borderColor:'#87CEEB'
               }}
             label="Password"
             type="password"
@@ -165,22 +171,23 @@ const Login = () => {
           <Button
             style={{
               fontSize: "10px",
-              marginLeft: 200,
+              marginLeft: 380,
             }}
           >
             Forget Password?
           </Button>
           <Button
             // onClick={handleSubmit}
-            onClick={()=>navigate('/selectRole')}
+            onClick={()=>navigate('/categoryChoose')}
             variant="contained"
             style={{
               width: "250px",
-              marginTop: "20px",
+              marginTop: "60px",
               borderRadius: "20px",
-              backgroundColor: "#212A3E",
-              color: "#fff",
+              backgroundColor: "#87CEEB",
+              color: "black",
               alignSelf: "center",
+              fontSize:16
             }}
           >
             Sign In
@@ -191,6 +198,7 @@ const Login = () => {
               marginTop: "10px",
               fontSize: "12px",
               textAlign: "center",
+              color:'gray'
             }}
           >
             Don't have an account?

@@ -33,12 +33,13 @@ const SelectRole = () => {
   return (
     <div
       style={{
-        height: 670,
+        // height: 670,
         // backgroundColor: "#E6F7FF",
         alignSelf: "center",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        marginTop:110
       }}
     >
       <div
@@ -50,7 +51,7 @@ const SelectRole = () => {
       >
         <div
           style={{
-            width: 800,
+            width: 1000,
             height: 250,
             display: "flex",
             justifyContent: "center",
@@ -60,9 +61,9 @@ const SelectRole = () => {
           }}
         >
           <Typography
-            style={{ fontSize: 50, textAlign: "center", display: "block" }}
+            style={{ fontSize: 80, textAlign: "center", display: "block", fontWeight:'600' }}
           >
-            Your trusted source for Service Taker & Service Provider.
+            Your trusted source for Services & Coaching.
           </Typography>
         </div>
         <div
@@ -77,7 +78,7 @@ const SelectRole = () => {
           }}
         >
           <Typography
-            style={{ fontSize: 18, textAlign: "center", marginTop: 10 }}
+            style={{ fontSize: 18, textAlign: "center", marginTop: 100 }}
           >
             We shouldn't have to figure everything out on our own.In an age
             where it's easier than ever to connect,let's start trusting on other
@@ -94,7 +95,7 @@ const SelectRole = () => {
             alignItems: "center",
             marginLeft: "auto",
             marginRight: "auto",
-            marginTop: 70,
+            marginTop: 120,
           }}
         >
           <Button
@@ -103,15 +104,18 @@ const SelectRole = () => {
             // }}
             onClick={()=>navigate('/services')}
             style={{
-              backgroundColor:'cornflowerblue',
-              width: 500,
+              backgroundColor:'#87CEEB',
+              width: 300,
               height: 50,
               marginLeft: "auto",
               marginRight: "auto",
               display: "flex",
               borderRadius: 20,
-              color: "white",
+              color: "black",
+              fontSize:16,
+              fontWeight:'600'
             }}
+            
           >
             Find Services
           </Button>
@@ -126,18 +130,20 @@ const SelectRole = () => {
             // }}
             onClick={()=>navigate('/expertsVerification')}
             style={{
-              backgroundColor: "pink",
-              width: 400,
+              backgroundColor: "#87CEEB",
+              width: 300,
               height: 50,
               marginLeft: "auto",
               marginRight: "auto",
               display: "flex",
               borderRadius: 20,
               color: "black",
+              fontSize:16,
+              fontWeight:'600'
               
             }}
           >
-            Continue as Provider
+            Become a Seller
           </Button>
         </div>
       </div>

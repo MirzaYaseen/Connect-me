@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Typography, Card, CardContent, Grid, Button } from "@mui/material";
+import {
+  Typography,
+  Card,
+  CardContent,
+  Grid,
+  Button,
+  Divider,
+} from "@mui/material";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Modal from "@mui/material/Modal";
 import TextField from "@mui/material/TextField";
@@ -12,41 +19,48 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import chatIcon from "../assets/images/chatIcon.png";
 import ExpertsTools from "../assets/images/expbg.jpg";
+import women from "../assets/images/women.jpeg";
 // var urlBackend = process.env.REACT_APP_API_KEY;
 const ExpertsDashboard = () => {
-//   const userdetails = JSON.parse(localStorage.getItem("userdetails"));
-//   const navigate = useNavigate();
+  //   const userdetails = JSON.parse(localStorage.getItem("userdetails"));
+  //   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [Ask, setAsk] = useState(false);
-//   const [Id, setId] = useState(false);
-//   const [lectureName, setLectureName] = useState("");
-//   const [lectureLink, setLectureLink] = useState("");
-//   const [lectureDescription, setLectureDescription] = useState("");
-//   const [attachments, setAttachments] = useState("");
+  const dividerStyle = {
+    width: 1,
+    backgroundColor: "skyblue",
+    height: "100%",
+    marginRight: 10,
+  };
+  //   const [Id, setId] = useState(false);
+  //   const [lectureName, setLectureName] = useState("");
+  //   const [lectureLink, setLectureLink] = useState("");
+  //   const [lectureDescription, setLectureDescription] = useState("");
+  //   const [attachments, setAttachments] = useState("");
 
-//   const [MentorLecture, setMentorLecture] = useState([]);
-//   const [getLectureAgain, setgetLectureAgain] = useState(true);
-//   const [pdfURL, setPdfURL] = useState("");
+  //   const [MentorLecture, setMentorLecture] = useState([]);
+  //   const [getLectureAgain, setgetLectureAgain] = useState(true);
+  //   const [pdfURL, setPdfURL] = useState("");
 
-//   useEffect(() => {
-//     const getMentorLectures = async () => {
-//       const userId = {
-//         id: userdetails?._id,
-//       };
+  //   useEffect(() => {
+  //     const getMentorLectures = async () => {
+  //       const userId = {
+  //         id: userdetails?._id,
+  //       };
 
-//       try {
-//         const result = await axios.post(
-//           `${urlBackend}lecture/getMentorLectures`,
-//           userId
-//         );
-//         console.log(result?.data?.data);
-//         setMentorLecture(result?.data?.data);
-//       } catch (err) {
-//         toast.error(err?.response?.data?.message);
-//       }
-//     };
-//     getMentorLectures();
-//   }, [getLectureAgain]);
+  //       try {
+  //         const result = await axios.post(
+  //           `${urlBackend}lecture/getMentorLectures`,
+  //           userId
+  //         );
+  //         console.log(result?.data?.data);
+  //         setMentorLecture(result?.data?.data);
+  //       } catch (err) {
+  //         toast.error(err?.response?.data?.message);
+  //       }
+  //     };
+  //     getMentorLectures();
+  //   }, [getLectureAgain]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -56,89 +70,89 @@ const ExpertsDashboard = () => {
     setOpen(false);
   };
 
-//   const handleDownloadPDF = async (pdfData, pdfFileName) => {
-//     const pdfName = {
-//       pdfFileName: pdfFileName,
-//     };
+  //   const handleDownloadPDF = async (pdfData, pdfFileName) => {
+  //     const pdfName = {
+  //       pdfFileName: pdfFileName,
+  //     };
 
-//     try {
-//       const response = await axios.post(
-//         `${urlBackend}lecture/downloadLeacture`,
-//         pdfName,
-//         { responseType: "blob" }
-//       );
+  //     try {
+  //       const response = await axios.post(
+  //         `${urlBackend}lecture/downloadLeacture`,
+  //         pdfName,
+  //         { responseType: "blob" }
+  //       );
 
-//       const blob = new Blob([response.data], { type: "application/pdf" });
+  //       const blob = new Blob([response.data], { type: "application/pdf" });
 
-//       const url = window.URL.createObjectURL(blob);
-//       const a = document.createElement("a");
-//       a.href = url;
-//       a.download = pdfFileName;
-//       document.body.appendChild(a);
-//       a.click();
+  //       const url = window.URL.createObjectURL(blob);
+  //       const a = document.createElement("a");
+  //       a.href = url;
+  //       a.download = pdfFileName;
+  //       document.body.appendChild(a);
+  //       a.click();
 
-//       window.URL.revokeObjectURL(url);
-//     } catch (err) {
-//       console.log(err?.response?.data?.message);
-//     }
-//   };
+  //       window.URL.revokeObjectURL(url);
+  //     } catch (err) {
+  //       console.log(err?.response?.data?.message);
+  //     }
+  //   };
 
-//   const handleDelete = async () => {
-//     try {
-//       const result = await axios.delete(
-//         `${urlBackend}lecture/deleteLecture/${Id}`
-//       );
-//       setAsk(false);
-//       setId("");
-//       setgetLectureAgain(!getLectureAgain);
-//       toast.success("Deleted Successfully");
-//     } catch (err) {
-//       toast.error(err?.response?.data?.message);
-//     }
-//   };
+  //   const handleDelete = async () => {
+  //     try {
+  //       const result = await axios.delete(
+  //         `${urlBackend}lecture/deleteLecture/${Id}`
+  //       );
+  //       setAsk(false);
+  //       setId("");
+  //       setgetLectureAgain(!getLectureAgain);
+  //       toast.success("Deleted Successfully");
+  //     } catch (err) {
+  //       toast.error(err?.response?.data?.message);
+  //     }
+  //   };
 
-//   const handleUpload = async () => {
-//     console.log("Lecture Name:", lectureName);
-//     console.log("Lecture Description:", lectureDescription);
-//     console.log("Attachments:", attachments);
+  //   const handleUpload = async () => {
+  //     console.log("Lecture Name:", lectureName);
+  //     console.log("Lecture Description:", lectureDescription);
+  //     console.log("Attachments:", attachments);
 
-//     if (
-//       lectureName.trim() === "" ||
-//       lectureLink.trim() === "" ||
-//       lectureDescription.trim() === "" ||
-//       attachments === ""
-//     ) {
-//       toast.error("Please enter all fields");
-//     } else {
-//       const lectureDetails = new FormData();
-//       lectureDetails.append("pdfFile", attachments);
-//       lectureDetails.append("lectureName", lectureName);
-//       lectureDetails.append("lectureLink", lectureLink);
-//       lectureDetails.append("lectureDescription", lectureDescription);
-//       lectureDetails.append("refOfUser", userdetails?._id);
-//       lectureDetails.append("category", userdetails?.subject);
-//       lectureDetails.append("MentorName", userdetails?.name);
+  //     if (
+  //       lectureName.trim() === "" ||
+  //       lectureLink.trim() === "" ||
+  //       lectureDescription.trim() === "" ||
+  //       attachments === ""
+  //     ) {
+  //       toast.error("Please enter all fields");
+  //     } else {
+  //       const lectureDetails = new FormData();
+  //       lectureDetails.append("pdfFile", attachments);
+  //       lectureDetails.append("lectureName", lectureName);
+  //       lectureDetails.append("lectureLink", lectureLink);
+  //       lectureDetails.append("lectureDescription", lectureDescription);
+  //       lectureDetails.append("refOfUser", userdetails?._id);
+  //       lectureDetails.append("category", userdetails?.subject);
+  //       lectureDetails.append("MentorName", userdetails?.name);
 
-//       try {
-//         const result = await axios.post(
-//           `${urlBackend}lecture/addLecture`,
-//           lectureDetails
-//         );
+  //       try {
+  //         const result = await axios.post(
+  //           `${urlBackend}lecture/addLecture`,
+  //           lectureDetails
+  //         );
 
-//         console.log(result);
+  //         console.log(result);
 
-//         toast.success("Lecture added successfully");
-//         setgetLectureAgain(!getLectureAgain);
-//         setLectureName("");
-//         setLectureLink("");
-//         setLectureDescription("");
-//         setAttachments("");
-//         setOpen(false);
-//       } catch (err) {
-//         toast.error(err?.response?.data?.message);
-//       }
-//     }
-//   };
+  //         toast.success("Lecture added successfully");
+  //         setgetLectureAgain(!getLectureAgain);
+  //         setLectureName("");
+  //         setLectureLink("");
+  //         setLectureDescription("");
+  //         setAttachments("");
+  //         setOpen(false);
+  //       } catch (err) {
+  //         toast.error(err?.response?.data?.message);
+  //       }
+  //     }
+  //   };
   const iconStyles = {
     fontSize: 30,
     color: "#1565C0",
@@ -146,11 +160,18 @@ const ExpertsDashboard = () => {
     marginBottom: 25,
   };
 
-//   const handleOpenChat = () => {
-//     navigate("/Messenger");
-//   };
+  //   const handleOpenChat = () => {
+  //     navigate("/Messenger");
+  //   };
   return (
-    <div style={{backgroundImage: `url(${ExpertsTools})`, padding: "20px", height:630, backgroundSize:'cover' }}>
+    <div
+      style={{
+        // backgroundImage: `url(${ExpertsTools})`,
+        padding: "20px",
+
+        // backgroundSize:'cover'
+      }}
+    >
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -167,7 +188,7 @@ const ExpertsDashboard = () => {
         <Typography
           variant="h4"
           style={{
-            marginTop: 20,
+            marginTop: 100,
             marginLeft: 10,
             fontSize: 30,
 
@@ -175,16 +196,16 @@ const ExpertsDashboard = () => {
             fontWeight: "700",
           }}
         >
-         Connect Me
+          CONNECT ME
         </Typography>
         <Button
-        //   onClick={handleOpenChat}
+          //   onClick={handleOpenChat}
           style={{
             background: "none",
             border: "none",
             cursor: "pointer",
             fontSize: "15px",
-            marginTop: "20px",
+            marginTop: "100px",
           }}
         >
           <FontAwesomeIcon icon={faComments} style={iconStyles} />
@@ -192,15 +213,13 @@ const ExpertsDashboard = () => {
       </div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <Typography
-        
           style={{
-           
             marginLeft: 10,
             fontSize: 25,
             fontFamily: "Roboto",
           }}
         >
-          Welcome, 
+          Welcome, Roahil
           {/* {userdetails?.name} */}
         </Typography>
         <div>
@@ -210,8 +229,9 @@ const ExpertsDashboard = () => {
               marginRight: "80px",
               fontSize: "17px",
               fontFamily: "Roboto",
-              backgroundColor: "#3f51b5", 
+              backgroundColor: "#3f51b5",
               color: "#fff",
+              textAlign: "center",
             }}
             onClick={handleOpen}
           >
@@ -229,12 +249,21 @@ const ExpertsDashboard = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                backgroundColor: "white",
+                background:
+                  "linear-gradient(to left,  #87CEEB, #87CEEB, #F5F5F5)",
                 padding: "20px",
                 width: "400px",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: 20,
               }}
             >
-              <Typography variant="h6">Add Service</Typography>
+              <Typography
+                style={{ textAlign: "center", fontSize: 25, fontWeight: "500" }}
+                variant="h6"
+              >
+                Add Service
+              </Typography>
               <TextField
                 label="Service Name"
                 fullWidth
@@ -271,9 +300,9 @@ const ExpertsDashboard = () => {
                 // }}
                 variant="contained"
                 color="primary"
-                style={{ marginTop: "16px" }}
+                style={{ marginTop: "16px", width: 200, marginLeft: 100 }}
               >
-                Add
+                Add Service
               </Button>
             </div>
           </Modal>
@@ -313,7 +342,7 @@ const ExpertsDashboard = () => {
                 }}
               >
                 <Button
-                //   onClick={handleDelete}
+                  //   onClick={handleDelete}
                   variant="contained"
                   color="primary"
                   style={{ margin: "10px" }}
@@ -335,7 +364,7 @@ const ExpertsDashboard = () => {
         </div>
       </div>
       <Typography
-         style={{
+        style={{
           marginTop: 10,
           marginLeft: 10,
           fontSize: 30,
@@ -344,17 +373,17 @@ const ExpertsDashboard = () => {
       >
         Experties
       </Typography>
-      <Grid
+      {/* <Grid
         container
         spacing={2}
         justifyContent="center"
         style={{ marginTop: "20px" }}
       >
-        {/* {MentorLecture.length > 0 ? (
+        {MentorLecture.length > 0 ? (
           MentorLecture.map((data, index) => {
-            return ( */}
+            return (
               <Grid item xs={12} sm={6} md={4}
-            //    key={data._id}
+               key={data._id}
                >
                 <Card
                   style={{
@@ -372,42 +401,139 @@ const ExpertsDashboard = () => {
                       }}
                     >
                       <Typography variant="h5">
-                        {/* Lecture {index + 1}: {data?.lectureName} */}
+                        Lecture {index + 1}: {data?.lectureName}
                       </Typography>
                       <BiSolidTrashAlt
                         style={{ cursor: "pointer" }}
                         color="red"
                         size={22}
-                        // onClick={() => {
-                        //   setAsk(true);
-                        //   setId(data._id);
-                        // }}
+                        onClick={() => {
+                          setAsk(true);
+                          setId(data._id);
+                        }}
                       />
                     </div>
                     <Typography variant="body2">
-                      {/* {data?.lectureDescription} */}
+                      {data?.lectureDescription}
                     </Typography>
                   </CardContent>
-                  {/* <img
+                  <img
                     onClick={() =>
                       handleDownloadPDF(data.pdfData, data.lecturePdfLocation)
                     }
                     src={pdf}
                     alt="PDF"
                     style={{ width: 80, height: 80, cursor: "pointer" }}
-                  /> */}
+                  />
                   <br />
                   <div style={{ marginLeft: "10px", width: 250 }}>
-                    {/* <a href={data?.lectureLink}>Link: {data?.lectureLink}</a> */}
+                    <a href={data?.lectureLink}>Link: {data?.lectureLink}</a>
                   </div>
                 </Card>
               </Grid>
-            {/* );
+            );
           })
         ) : (
           <p>No Expert yet :(</p>
-        )} */}
-      </Grid>
+        )} 
+      </Grid> */}
+
+      <div
+        style={{
+          marginTop: 20,
+          width: "97%",
+          height: 200,
+          borderRadius: 20,
+          display: "flex",
+          justifyContent: "space-between",
+          // alignItems: "center",
+          // alignSelf: "center",
+          borderStyle: "solid",
+          borderWidth: 2,
+          flexDirection: "row",
+          borderColor: "green",
+
+          padding: 20,
+        }}
+      >
+        <div>
+          <img
+            style={{
+              width: 80,
+              height: 80,
+              borderRadius: 50,
+              borderColor: "#87CEEB",
+              borderWidth: 5,
+              borderStyle: "solid",
+            }}
+            src={women}
+            alt="Profile"
+          />
+        </div>
+        <div>
+          <Typography style={{ marginTop: 10, fontSize: 25, marginLeft: 30 }}>
+            Leslie Alexender
+          </Typography>
+          <Typography style={{ fontSize: 16, marginLeft: 30 }}>
+            Carpenter Expert
+          </Typography>
+          <Typography
+            style={{
+              marginTop: 30,
+              fontSize: 12,
+              color: "GrayText",
+              marginRight: 400,
+              marginLeft: 30,
+            }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </Typography>
+        </div>
+        <Divider orientation="vertical" style={dividerStyle} />
+        <div style={{ width: 300 }}>
+          <Button
+            style={{
+              backgroundColor: "#87CEEB",
+              width: 200,
+              borderRadius: 30,
+              color: "black",
+              fontWeight: "600",
+            }}
+          >
+            Live Chat
+          </Button>
+          <Typography
+            style={{ textAlign: "center", marginTop: 10, fontSize: 12 }}
+          >
+            You can Live chat with the service Procider for any further queries
+            or Advance booking
+          </Typography>
+          <Divider />
+          <Typography
+            style={{ textAlign: "center", marginTop: 10, fontSize: 12 }}
+          >
+            Unlimited Chat, email or text
+          </Typography>
+          <Divider />
+          <Typography
+            style={{ textAlign: "center", marginTop: 10, fontSize: 12 }}
+          >
+            Up to 4 calls per month
+          </Typography>
+          <Divider />
+          <Typography
+            style={{ textAlign: "center", marginTop: 30, fontSize: 22 }}
+          >
+            $5/Hour
+          </Typography>
+        </div>
+      </div>
     </div>
   );
 };

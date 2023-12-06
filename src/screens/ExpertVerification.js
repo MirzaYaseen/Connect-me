@@ -15,15 +15,16 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles((theme) => ({
   backgroundContainer: {
     // background: '#E6F7FF',
-    backgroundImage: `url(${ExpertsTools})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    // backgroundImage: `url(${ExpertsTools})`,
+    // backgroundSize: "cover",
+    // backgroundPosition: "center",
+    background: "linear-gradient(to left,  #87CEEB, #87CEEB, #F5F5F5)",
     position: "fixed",
     top: 0,
     left: 0,
     width: "100%",
     height: "100%",
-    display: "flex",
+    display: "block",
     alignItems: "center", // Center vertically
     justifyContent: "center", // Center horizontally
   },
@@ -32,6 +33,8 @@ const useStyles = makeStyles((theme) => ({
     // padding: '10px',
     //  elevation:3,
     borderRadius: "10px",
+    height:450,
+    marginTop: 70,
 
     // boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
   },
@@ -39,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "24px",
     // marginBottom: 10,
     textAlign: "center",
-    color: "green",
+    color: "#87CEEB",
+    fontWeight: "800",
   },
   listItem: {
     border: "1px solid #ccc",
@@ -54,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   },
   timer: {
     fontSize: "16px",
-    color: "#888",
+    color: "black",
     marginTop: "50px",
     justifyContent: "center",
     alignSelf: "center",
@@ -150,12 +154,12 @@ const ExpertVerification = () => {
       question:
         "What should you do if you are not satisfied with the work of a service professional?",
       options: [
-        "♟️ Contact the service provider to address the issue",
+        "♟️ Contact the service provider.",
         "♟️ Do nothing and accept it",
-        "♟️ Post a negative review without contacting them",
+        "♟️ Post a negative review",
         "♟️ Sue them in court",
       ],
-      correctAnswer: "♟️ Contact the service provider to address the issue",
+      correctAnswer: "♟️ Contact the service provider.",
     },
     {
       question:
@@ -195,23 +199,25 @@ const ExpertVerification = () => {
     const correctAnswers = questions.map((question) => question.correctAnswer);
     const correctCount = correctAnswers.reduce(
       (count, correctAnswer, index) => {
-        if (correctAnswer.toLowerCase() === selectedAnswers[index].toLowerCase()) {
+        if (
+          correctAnswer.toLowerCase() === selectedAnswers[index].toLowerCase()
+        ) {
           return count + 1;
         }
-        
+
         return count;
       },
       0
     );
     console.log("Correct Answers:", correctAnswers);
     console.log("Selected Answers:", selectedAnswers);
-    
+
     if (correctCount >= 4) {
       console.log("Quiz Passed!");
       // Navigate to the next screen (e.g., SuccessScreen)
       setQuizPassed(true);
       //   navigate('/mentotSubjectReg');
-      navigate('/expertsDashboard');
+      navigate("/congratsSeller");
     } else {
       // Redirect to the login page
 
@@ -227,15 +233,15 @@ const ExpertVerification = () => {
     <div className={classes.backgroundContainer}>
       <Container maxWidth="sm" className={classes.container}>
         {currentQuestion < questions.length ? (
-          <Paper elevation={3} style={{ padding: "100px", height: "100%" }}>
-            <Typography
+          <Paper elevation={3} style={{ padding: "100px", height: "95%" }}>
+            {/* <Typography
               fontSize={28}
               align="center"
               gutterBottom
               marginBottom={5}
             >
               Expert Verification
-            </Typography>
+            </Typography> */}
             <Typography variant="h6" className={classes.question}>
               {currentQuestionData.question}
             </Typography>
@@ -243,6 +249,7 @@ const ExpertVerification = () => {
               {currentQuestionData.options.map((option, index) => (
                 <ListItem key={index}>
                   <ListItemButton
+                    style={{ backgroundColor: "#87CEEB" }}
                     onClick={() => handleAnswerSelect(option)}
                     // sx={listItemStyle}
                     className={classes.listItem}
@@ -254,7 +261,7 @@ const ExpertVerification = () => {
             </List>
             <Typography
               variant="subtitle1"
-              color="textSecondary"
+              color="white"
               className={classes.timer}
             >
               Time remaining: {timer} seconds
