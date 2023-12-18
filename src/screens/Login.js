@@ -178,7 +178,7 @@ const Login = () => {
           </Button>
           <Button
             // onClick={handleSubmit}
-            onClick={()=>navigate('/categoryChoose')}
+            onClick={()=>navigate('/selectRole')}
             variant="contained"
             style={{
               width: "250px",

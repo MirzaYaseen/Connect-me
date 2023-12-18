@@ -223,7 +223,7 @@ const ExpertVerification = () => {
 
       //   navigate('/chooseSubject');
       console.log("Quiz failed!");
-      navigate("/services");
+      navigate("/categoryChoose");
     }
   };
 
