@@ -24,7 +24,7 @@ const ChooseCategory = () => {
             fontWeight: "600",
           }}
         >
-          HOW CONNECTME WORKS!
+          HOW CONNECT ME WORKS!
         </Typography>
         <Typography
           style={{
@@ -624,7 +624,7 @@ const ChooseCategory = () => {
         }}
       >
         <Button
-        onClick={()=>navigate('/selectRole')}
+          onClick={() => navigate("/makeAppointment")}
           title="Get Started"
           style={{
             backgroundColor: "#87CEEB",

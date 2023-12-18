@@ -102,7 +102,7 @@ const SelectRole = () => {
             // onClick={() => {
             //   UpdateUserAsStudent("Student");
             // }}
-            onClick={()=>navigate('/services')}
+            onClick={()=>navigate('/categoryChoose')}
             style={{
               backgroundColor:'#87CEEB',
               width: 300,

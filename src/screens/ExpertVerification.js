@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     // padding: '10px',
     //  elevation:3,
     borderRadius: "10px",
-    height:450,
+    height: 450,
     marginTop: 70,
 
     // boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',

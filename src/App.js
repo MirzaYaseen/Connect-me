@@ -18,6 +18,8 @@ import ElectricianServices from "./screens/ElectricianServices";
 import PainterServices from "./screens/PainterServices";
 import CarpenterServices from "./screens/CarpenterServices";
 import AirconditionerServices from "./screens/AirConditionerServices";
+import ContactUs from "./screens/ContactUs";
+import MakeAppointment from "./screens/MakeAppointment";
 // import ChooseSubject from "./screens/ChooseType";
 // import StudentWelcome from "./screens/StudentWelcome";
 // import StudentChooseLan from "./screens/StudentChooseLan";
@@ -56,6 +58,9 @@ export default function App() {
         <Route path="/painterServices" element={<PainterServices />} />
         <Route path="/carpenterServices" element={<CarpenterServices />} />
         <Route path="/airConditionerServices" element={<AirconditionerServices />} />
+        <Route path="/contactUs" element={<ContactUs />} />
+        <Route path="/makeAppointment" element={<MakeAppointment />} />
+
         {/* <Route element={<PublicRoutes />}>
           <Route path="/" element={<SignUpPage />} />
           <Route path="login" element={<Login />} />
