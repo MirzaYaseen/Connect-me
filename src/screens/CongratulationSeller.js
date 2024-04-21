@@ -11,7 +11,7 @@ const CongratulationSeller = () => {
     <div
       style={{
         height: 680,
-        marginTop:60,
+    
         // backgroundColor: "#E6F7FF",
         // backgroundImage: `url(${bg})`,
         // backgroundSize: "contain", 
@@ -129,7 +129,7 @@ const CongratulationSeller = () => {
             // onClick={() => {
             //   UpdateUserAsStudent("Student");
             // }}
-            onClick={() => navigate("/expertsDashboard")}
+            onClick={() => navigate("/registerServiceProvider")}
             style={{
               backgroundColor: "#87CEEB",
               width: 250,

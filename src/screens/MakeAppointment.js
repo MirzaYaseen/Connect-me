@@ -23,7 +23,7 @@ export default function MakeAppointment() {
         overflow: "hidden",
       }}
     >
-      <div style={{ marginTop: 80, padding: 50 }}>
+      <div style={{ marginTop: 20, padding: 50 }}>
         <Typography
           style={{
             fontSize: 75,
@@ -125,7 +125,7 @@ export default function MakeAppointment() {
           style={{
             width: 820,
             height: 670,
-            marginTop: 75,
+            marginTop: 10,
 
             objectFit: "cover",
             marginRight: 30,

@@ -1,0 +1,91 @@
+.ChatScreen {
+  display: flex;
+  width: 100%;
+  
+}
+.ChatMenu {
+  flex: 3.5;
+  border-width: 1;
+  border-style:groove;
+}
+.ChatBox {
+  flex: 5.5;
+  border-width: 1;
+  border-style:groove;
+  justify-content: center;
+  text-align: center;
+}
+.ChatOnline {
+  flex: 3;
+  border-width: 1;
+  border-style:groove;
+}
+
+.ChatBoxWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.ChatUserName {
+  margin: 10px;
+
+  border-bottom: 0.5px solid rgb(144, 143, 143);
+  display: flex;
+  align-items: center;
+}
+.OtherUserPhoto {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+.OtherUserPhoto2 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+margin-top: 210px;
+/* margin-bottom: 60px; */
+margin-left: auto;
+margin-right: auto;
+   justify-content: center;
+   align-items: center;
+   align-self: center;
+   display: flex;
+}
+.OtherUserName {
+  margin-left: 15px;
+  font-weight: bold;
+}
+.messageArea {
+  height: 81vh;
+  overflow-y: scroll;
+  padding-right: 10px;
+  
+}
+.textArea {
+  width: 76%;
+  height: 40px;
+  border-radius: 40px;
+  color: cornflowerblue;
+}
+.SendButton {
+  background-color: #ad02ad;
+  color: white;
+
+  width: 149px;
+  height: 43px;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+.InputFieldForEnteringMessage {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 27px;
+  margin-bottom: 20px;
+  
+}
+.InputMessageContainer {
+  width: 65%;
+  border-radius: 10px;
+  padding-left: 10px;
+  background-color: azure;
+}

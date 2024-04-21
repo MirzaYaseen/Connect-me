@@ -20,27 +20,26 @@ import CarpenterServices from "./screens/CarpenterServices";
 import AirconditionerServices from "./screens/AirConditionerServices";
 import ContactUs from "./screens/ContactUs";
 import MakeAppointment from "./screens/MakeAppointment";
-// import ChooseSubject from "./screens/ChooseType";
-// import StudentWelcome from "./screens/StudentWelcome";
-// import StudentChooseLan from "./screens/StudentChooseLan";
-// import Mentor from "./screens/MentorWelcome";
-// import StudentDashboard from "./screens/StudentDashboard";
-// import MentorRegistrationForm from "./screens/MentorSubjectRegForm";
-// import LecturerDashboard from "./screens/LecturerDashboard";
-// import ViewAllMentors from "./screens/ViewAllMentors";
-// import PublicRoutes from "./components/PublicRoutes";
-// import ProtectedRoutes from "./components/ProtectedRoutes";
-// import Messenger from "./screens/Messenger";
-// import AboutPage from "./screens/About";
-// import QuizScreen from "./screens/VerificationScreen";
-// import Services from "./screens/Services"
+import RegisterServiceProvider from "./screens/RegisterServiceProvider";
+import ViewAllServices from "./screens/ViewAllServices";
+import Reviews from "./screens/Reviews";
+import ServiceProviderReviews from './screens/ServiceProviderReviews';
+import PublicRoutes from "./components/PublicRoutes";
+import ProtectedRoutes from "./components/ProtectedRoutes";
+import Messenger from "./screens/Messenger";
+
 export default function App() {
   return (
     <BrowserRouter>
       <AppHeader />
       <Routes>
+
+      <Route element={<PublicRoutes />}>
         <Route path="/" element={<SignUpPage />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="login" element={<Login />} />
+      </Route>
+
+        <Route element={<ProtectedRoutes />}>
         <Route path="/services" element={<Services />} />
         <Route path="/electricians" element={<Electricians />} />
         <Route path="/carpenters" element={<CarPenters />} />
@@ -51,7 +50,6 @@ export default function App() {
         <Route path="/expertsVerification" element={<ExpertVerification />} />
         <Route path="/payment" element={<PaymentForm />} />
         <Route path="/about" element={<AboutPage />} />
-        
         <Route path="/categoryChoose" element={<ChooseCategory />} />
         <Route path="/congratsSeller" element={<CongratulationSeller />} />
         <Route path="/electricianServices" element={<ElectricianServices />} />
@@ -60,28 +58,12 @@ export default function App() {
         <Route path="/airConditionerServices" element={<AirconditionerServices />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/makeAppointment" element={<MakeAppointment />} />
-
-        {/* <Route element={<PublicRoutes />}>
-          <Route path="/" element={<SignUpPage />} />
-          <Route path="login" element={<Login />} />
-        </Route> */}
-
-        {/* <Route element={<ProtectedRoutes />}>
-          <Route path="studentChooseLang" element={<StudentChooseLan />} />
-
-          <Route path="chooseSubject" element={<ChooseSubject />} />
-          <Route path="mentorWelcome" element={<Mentor />} />
-          <Route path="studentWelcome" element={<StudentWelcome />} />
-          <Route path="studentWelcome" element={<StudentWelcome />} />
-          <Route path="studentDashboard" element={<StudentDashboard />} />
-          <Route path="mentotSubjectReg" element={<MentorRegistrationForm />} />
-          <Route path="lecturerDashboard" element={<LecturerDashboard />} />
-          <Route path="ViewAll" element={<ViewAllMentors />} />
-          <Route path="Messenger" element={<Messenger />} />
-          <Route path="About" element={<AboutPage />} />
-          <Route path="quiz" element={<QuizScreen />} />
-          <Route path="services" element={<Services />} />
-        </Route> */}
+        <Route path="/registerServiceProvider" element={<RegisterServiceProvider />} />
+        <Route path="/viewAllServices" element={<ViewAllServices />} />
+        <Route path="reviews" element={<Reviews />} />
+        <Route path="/serviceProviderReviews" element={<ServiceProviderReviews />} />
+        <Route path="/Messenger" element={<Messenger />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

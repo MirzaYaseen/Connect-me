@@ -11,7 +11,7 @@ const ChooseCategory = () => {
           justifyContent: "center",
           alignItems: "center",
           alignSelf: "center",
-          marginTop: 120,
+          marginTop: 50,
           flexDirection: "column",
         }}
       >
@@ -637,6 +637,7 @@ const ChooseCategory = () => {
           Get Started
         </Button>
         <Button
+         onClick={()=>navigate('/services')}
           title="Get Started"
           style={{
             backgroundColor: "#87CEEB",
@@ -649,6 +650,7 @@ const ChooseCategory = () => {
           Search
         </Button>
         <Button
+          onClick={()=>navigate('/Messenger')}
           title="Get Started"
           style={{
             backgroundColor: "#87CEEB",
@@ -658,7 +660,7 @@ const ChooseCategory = () => {
             borderRadius: 20,
           }}
         >
-          See Tests
+          Live Chat
         </Button>
       </div>
     </div>

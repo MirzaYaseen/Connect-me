@@ -275,7 +275,7 @@ const SignUpPage = () => {
             helperText={passwordError ? "Please enter a password" : ""}/>
           
           <Button
-            // onClick={handleSubmit}
+            onClick={handleSubmit}
             variant="contained"
             style={{
               display: "flex",
@@ -284,6 +284,8 @@ const SignUpPage = () => {
               width: 250,
               marginTop: 50,
               borderRadius: 20,
+              color: "black",
+              fontSize:16,
               backgroundColor: "#87CEEB",
             }}
           >

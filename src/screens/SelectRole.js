@@ -6,30 +6,30 @@ import axios from "axios";
 var url = process.env.REACT_APP_API_KEY;
 const SelectRole = () => {
   const navigate = useNavigate();
-//   const userdetails = JSON.parse(localStorage.getItem("userdetails"));
+  const userdetails = JSON.parse(localStorage.getItem("userdetails"));
 
-//   const UpdateUserAsStudent = async (user) => {
-//     const userCredentials = {
-//       id: userdetails?._id,
-//       role: user,
-//     };
-//     try {
-//       const result = await axios.patch(`${url}users/updateMe`, userCredentials);
+  const UpdateUserAsStudent = async (user) => {
+    const userCredentials = {
+      id: userdetails?._id,
+      role: user,
+    };
+    try {
+      const result = await axios.patch(`${url}users/updateMe`, userCredentials);
 
-//       localStorage.setItem(
-//         "userdetails",
-//         JSON.stringify(result?.data?.data?.user)
-//       );
+      localStorage.setItem(
+        "userdetails",
+        JSON.stringify(result?.data?.data?.user)
+      );
 
-//       if (user === "Student") {
-//         navigate("/studentWelcome");
-//       } else {
-//         navigate("/Quiz");
-//       }
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
+      if (user === "Student") {
+        navigate("/categoryChoose");
+      } else {
+        navigate("/expertsVerification");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div
       style={{
@@ -99,10 +99,10 @@ const SelectRole = () => {
           }}
         >
           <Button
-            // onClick={() => {
-            //   UpdateUserAsStudent("Student");
-            // }}
-            onClick={()=>navigate('/categoryChoose')}
+            onClick={() => {
+              UpdateUserAsStudent("Student");
+            }}
+            // onClick={()=>navigate('/categoryChoose')}
             style={{
               backgroundColor:'#87CEEB',
               width: 300,
@@ -125,10 +125,10 @@ const SelectRole = () => {
             or
           </Typography>
           <Button
-            // onClick={() => {
-            //   UpdateUserAsStudent("Mentor");
-            // }}
-            onClick={()=>navigate('/expertsVerification')}
+            onClick={() => {
+              UpdateUserAsStudent("Mentor");
+            }}
+            // onClick={()=>navigate('/expertsVerification')}
             style={{
               backgroundColor: "#87CEEB",
               width: 300,

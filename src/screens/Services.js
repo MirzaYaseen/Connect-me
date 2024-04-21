@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Card, Typography, Button, Icon,IconButton  } from "@mui/material";
+import { Box, Card, Typography, Button, Icon, IconButton } from "@mui/material";
 import Image1 from "../assets/images/6.png";
 import Electircian from "../assets/images/electrician.jpg";
 import Air from "../assets/images/air.jpg";
@@ -9,19 +9,19 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 function Screen() {
   const navigate = useNavigate();
-  const [selectedLanguages, setSelectedLanguages] = useState([]);
+  const [selectedService, setSelectedService] = useState([]);
 
-  const handleLanguageClick = (language) => {
-    if (selectedLanguages.includes(language)) {
-      setSelectedLanguages(
-        selectedLanguages.filter((lang) => lang !== language)
+  const handleServiceClick = (service) => {
+    if (selectedService.includes(service)) {
+      setSelectedService(
+        selectedService.filter((serv) => serv !== service)
       );
     } else {
-      setSelectedLanguages([...selectedLanguages, language]);
+      setSelectedService([...selectedService, service]);
     }
   };
 
-  const isLanguageSelected = (language) => selectedLanguages.includes(language);
+  const isServiceSelected = (service) => selectedService.includes(service);
 
   return (
     <Box
@@ -30,15 +30,16 @@ function Screen() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 15,
-        // height: "90vh",
+        marginTop: 2,
         fontFamily: "Roboto",
-        // overflow:'hidden'
-        // backgroundColor: "#E6F7FF",
-       
       }}
     >
-      <Typography style={{ fontWeight:'600'}} variant="h4" gutterBottom marginBottom={5}>
+      <Typography
+        style={{ fontWeight: "600" }}
+        variant="h4"
+        gutterBottom
+        marginBottom={0.5}
+      >
         Choose a Service Category
       </Typography>
       <div
@@ -49,13 +50,17 @@ function Screen() {
         }}
       >
         <Button
+          variant={isServiceSelected("Electrician") ? "contained" : "outlined"}
+          color="primary"
+          sx={{ marginRight: 2, marginTop: 5 }}
+          onClick={() => handleServiceClick("Electrician")}
           style={{
             display: "flex",
             flexDirection: "column",
-            background: "none",
+            // background: "none",
             marginRight: 30,
           }}
-          onClick={() => navigate("/electricianServices")}
+          // onClick={() => navigate("/electricianServices")}
         >
           <Card
             sx={{
@@ -72,19 +77,33 @@ function Screen() {
               marginTop: 3,
             }}
           ></Card>
-           <IconButton color="primary" aria-label="forward" style={{marginLeft:'auto'}}>
-        <ArrowForwardIcon />
-      </IconButton>
+          <IconButton
+            color="primary"
+            aria-label="forward"
+            style={{ marginLeft: "auto" }}
+          >
+            <ArrowForwardIcon />
+          </IconButton>
           <Typography style={{ textAlign: "center", marginTop: 15 }}>
             Electrician
           </Typography>
-          <Typography style={{ textAlign: "center", marginTop: 15, fontSize:12, color:'GrayText' }}>
-           12 services Available
+          <Typography
+            style={{
+              textAlign: "center",
+              marginTop: 15,
+              fontSize: 12,
+              color: "GrayText",
+            }}
+          >
+            12 services Available
           </Typography>
         </Button>
         <Button
           style={{ display: "flex", flexDirection: "column", marginRight: 30 }}
-          onClick={()=>navigate('/airConditionerServices')}
+          variant={isServiceSelected("AirConditioning") ? "contained" : "outlined"}
+          color="primary"
+          sx={{ marginRight: 2, marginTop: 5 }}
+          onClick={() => handleServiceClick("AirConditioning")}
         >
           <Card
             sx={{
@@ -101,19 +120,33 @@ function Screen() {
               marginTop: 3,
             }}
           ></Card>
-           <IconButton color="primary" aria-label="forward" style={{marginLeft:'auto'}}>
-        <ArrowForwardIcon />
-      </IconButton>
+          <IconButton
+            color="primary"
+            aria-label="forward"
+            style={{ marginLeft: "auto" }}
+          >
+            <ArrowForwardIcon />
+          </IconButton>
           <Typography style={{ textAlign: "center", marginTop: 15 }}>
             Air Conditioning
           </Typography>
-          <Typography style={{ textAlign: "center", marginTop: 15, fontSize:12, color:'GrayText' }}>
-           12 services Available
+          <Typography
+            style={{
+              textAlign: "center",
+              marginTop: 15,
+              fontSize: 12,
+              color: "GrayText",
+            }}
+          >
+            12 services Available
           </Typography>
         </Button>
         <Button
           style={{ display: "flex", flexDirection: "column", marginRight: 30 }}
-          onClick={() => navigate("/carpenterServices")}
+          variant={isServiceSelected("Carpenter") ? "contained" : "outlined"}
+          color="primary"
+          sx={{ marginRight: 2, marginTop: 5 }}
+          onClick={() => handleServiceClick("Carpenter")}
         >
           <Card
             sx={{
@@ -130,19 +163,33 @@ function Screen() {
               marginTop: 3,
             }}
           ></Card>
-          <IconButton color="primary" aria-label="forward" style={{marginLeft:'auto'}}>
-        <ArrowForwardIcon />
-      </IconButton>
+          <IconButton
+            color="primary"
+            aria-label="forward"
+            style={{ marginLeft: "auto" }}
+          >
+            <ArrowForwardIcon />
+          </IconButton>
           <Typography style={{ textAlign: "center", marginTop: 15 }}>
             Carpenter
           </Typography>
-          <Typography style={{ textAlign: "center", marginTop: 15, fontSize:12, color:'GrayText' }}>
-           12 services Available
+          <Typography
+            style={{
+              textAlign: "center",
+              marginTop: 15,
+              fontSize: 12,
+              color: "GrayText",
+            }}
+          >
+            12 services Available
           </Typography>
         </Button>
         <Button
           style={{ display: "flex", flexDirection: "column", marginRight: 30 }}
-          onClick={() => navigate("/painterServices")}
+          variant={isServiceSelected("Painter") ? "contained" : "outlined"}
+          color="primary"
+          sx={{ marginRight: 2, marginTop: 5 }}
+          onClick={() => handleServiceClick("Painter")}
         >
           <Card
             sx={{
@@ -159,64 +206,47 @@ function Screen() {
               marginTop: 3,
             }}
           ></Card>
-           <IconButton color="primary" aria-label="forward" style={{marginLeft:'auto'}}>
-        <ArrowForwardIcon />
-      </IconButton>
+          <IconButton
+            color="primary"
+            aria-label="forward"
+            style={{ marginLeft: "auto" }}
+          >
+            <ArrowForwardIcon />
+          </IconButton>
           <Typography style={{ textAlign: "center", marginTop: 15 }}>
             Painter
           </Typography>
-          <Typography style={{ textAlign: "center", marginTop: 15, fontSize:12, color:'GrayText' }}>
-           12 services Available
+          <Typography
+            style={{
+              textAlign: "center",
+              marginTop: 15,
+              fontSize: 12,
+              color: "GrayText",
+            }}
+          >
+            12 services Available
           </Typography>
         </Button>
       </div>
-
-      {/* <Box sx={{ marginTop: 5 }}>
-        <Button
-          variant={isLanguageSelected("JavaScript") ? "contained" : "outlined"}
-          color="primary"
-          sx={{ marginRight: 2 }}
-          onClick={() => handleLanguageClick("JavaScript")}
-        >
-          JavaScript
-        </Button>
-        <Button
-          variant={isLanguageSelected("Python") ? "contained" : "outlined"}
-          color="primary"
-          sx={{ marginRight: 2 }}
-          onClick={() => handleLanguageClick("Python")}
-        >
-          Python
-        </Button>
-        <Button
-          variant={isLanguageSelected("Java") ? "contained" : "outlined"}
-          color="primary"
-          sx={{ marginRight: 2 }}
-          onClick={() => handleLanguageClick("Java")}
-        >
-          Java
-        </Button>
-        <Button
-          variant={isLanguageSelected("C++") ? "contained" : "outlined"}
-          color="primary"
-          onClick={() => handleLanguageClick("C++")}
-        >
-          C++
-        </Button>
-      </Box>
       <Button
-        // onClick={() => {
-        //   console.log(selectedLanguages);
-        //   localStorage.setItem(
-        //     "SelectedCatByStudent",
-        //     JSON.stringify(selectedLanguages)
-        //   );
-        //   navigate("/studentDashboard");
-        // }}
-        style={{ marginTop: 40, backgroundColor: "#12486B", width: 200 }}
+        onClick={() => {
+          console.log(selectedService);
+          localStorage.setItem(
+            "SelectedCatByServiceTaker",
+            JSON.stringify(selectedService)
+          );
+          navigate("/airconditioners");
+        }}
+        style={{
+          marginTop: 40,
+          backgroundColor: "#87CEEB",
+          width: 300,
+          marginBottom: 20,
+          height: 50,
+        }}
       >
-        <Typography style={{ color: "white" }}>Continue</Typography>
-      </Button> */}
+        <Typography style={{ color: "black" }}>Click to Continue</Typography>
+      </Button>
     </Box>
   );
 }

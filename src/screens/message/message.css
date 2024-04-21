@@ -1,0 +1,37 @@
+.Messagediv {
+  display: flex;
+  flex-direction: column;
+}
+.Owndiv {
+  /* margin-left: 50%; */
+  margin-bottom: -15px;
+  align-self: end;
+}
+.Otherdiv {
+  margin-bottom: -15px;
+  align-self: start;
+}
+.OwndivText {
+  background-color: #164863;
+  padding: 8px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 10px;
+
+  color: white;
+}
+.OtherDivText {
+  background-color: #e4e6eb;
+  padding: 8px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 10px;
+}
+.MessageTime {
+  font-size: 15px;
+  margin-top: -15px;
+  margin-left: 20px;
+  
+}

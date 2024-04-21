@@ -1,47 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { Typography, Button, Divider } from "@mui/material";
-import women from "../assets/images/women.jpeg";
-import { useNavigate } from "react-router-dom";
+import React,{useState,useEffect} from "react";
+import { Typography, Card, CardContent, Grid, Button,  Divider, } from "@mui/material";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import pdf from "../assets/images/pdf.png";
+import { ToastContainer, toast } from 'react-toastify';
+import women from "../assets/images/women.jpeg";
 var url = process.env.REACT_APP_API_KEY;
 
-export default function AirConditioner() {
+
+const ViewAllServiceProviders = () => {
+  const Services = JSON.parse(localStorage.getItem("Services"));
   const userdetails = JSON.parse(localStorage.getItem("userdetails"));
-  const SelectedCatByStudent = JSON.parse(
-    localStorage.getItem("SelectedCatByServiceTaker")
-  );
-
+  const mentorId = localStorage.getItem('ServiceProviderId');
+  const [value, setValue] = useState(0);
+  const [reviews, setReviews] = useState([]);
   const navigate = useNavigate();
-  const [ServiceProvider, setServiceProvider] = useState([]);
-  const [showService, setshowService] = useState(false);
-
-  useEffect(() => {
-    const getSelectedCatService = async () => {
-      const cat = {
-        category: SelectedCatByStudent,
-      };
-
-      try {
-        const result = await axios.post(
-          `${url}service/getServiceByCategory`,
-          cat
-        );
-        const originalArray = result?.data?.data;
-
-        localStorage.setItem("Services", JSON.stringify(result?.data?.data));
-        if (result?.data?.data.length > 3) {
-          setServiceProvider(originalArray.slice(0, 3));
-        } else {
-          setServiceProvider(result?.data?.data);
-        }
-        setshowService(true);
-      } catch (err) {
-        console.log(err?.response?.data?.message);
-      }
-    };
-    getSelectedCatService();
-  }, []);
 
   const CreateConversation = async (receiver) => {
     const usersIds = {
@@ -62,63 +35,56 @@ export default function AirConditioner() {
     width: 1,
     backgroundColor: "skyblue",
     height: "100%",
-    marginRight: 10,
+    marginRight:20,
   };
 
+  useEffect(() => {
+    const getReviews = async () => {
+      try {
+        const result = await axios.get(
+          `${url}review/getProductReview/${mentorId}`
+        );
+
+        setReviews(result?.data?.data);
+      } catch (err) {
+        toast.error(err?.response?.data?.message);
+        console.log('===>', err)
+      }
+    };
+
+    getReviews();
+  }, [value]);
+
+  
   return (
-    <div style={{ padding: 30 }}>
-      <div
+    <div style={{ marginBottom: 30, padding:20 }}>
+      <Typography
         style={{
           marginTop: 20,
-          marginLeft: 10,
+          marginLeft: 70,
+          fontSize: 30,
+          color: "#212A3E",
+          fontWeight: "500",
           display: "flex",
-          flexDirection: "row",
-        }}
-      >
-        <Typography style={{ fontWeight: "600", color: "orange" }}>
-          {ServiceProvider ? ServiceProvider.length : 0} Services Available
-        </Typography>
-        <Typography
-          style={{ marginLeft: "30px", fontWeight: "600", color: "orange" }}
-        >
-          {" "}
-          {SelectedCatByStudent?.length} Services Selected
-        </Typography>
-      </div>
-      {showService ? (
-        ServiceProvider.length < 1 ? (
-          <p
-            style={{
-              textAlign: "center",
-              alignSelf: "center",
-              justifyContent: "center",
-              marginTop: 20,
-            }}
-          >
-            No Service available in this category
-          </p>
-        ) : (
-          <>
-            <Button
-              onClick={() => navigate("/viewAllServices")}
-              style={{
-                display: "flex",
-                marginLeft: "auto",
-                marginRight: 10,
-                marginTop: 20,
-                marginBottom: 20,
-                width: 200,
-                backgroundColor: "ButtonShadow",
-              }}
-            >
-              View All
-            </Button>
-            {ServiceProvider.map((data) => {
-              return (
-                <div
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+        }}>
+        
+      </Typography>
+
+      <Grid
+        container
+        spacing={2}
+        justifyContent="center"
+        style={{ marginTop: 40 }}>
+        {Services ? (
+          Services.map((data) => {
+            return (
+              <div
                   style={{
                     marginTop: 20,
-                    width: "97%",
+                    width: "95%",
                     height: 250,
                     borderRadius: 20,
                     display: "flex",
@@ -274,13 +240,14 @@ export default function AirConditioner() {
                     </Typography>
                   </div>
                 </div>
-              );
-            })}
-          </>
-        )
-      ) : (
-        <p>Please wait</p>
-      )}
+            );
+          })
+        ) : (
+          <p>No Service available</p>
+        )}
+      </Grid>
     </div>
   );
-}
+};
+
+export default ViewAllServiceProviders;

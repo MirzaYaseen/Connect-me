@@ -1,0 +1,52 @@
+.NavBar {
+  background-color: blueviolet;
+  margin: 10px;
+  height: 80px;
+  display: flex;
+}
+.NavBarText {
+  color: white;
+  align-self: center;
+  margin-left: 30px;
+}
+.UnderNavBarDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 100px;
+  margin-bottom: -20px;
+  margin-top: 20px;
+}
+.UnderNavBarDivText {
+  font-weight: bold;
+}
+.DivOfList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 100px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 0.5px solid rgb(208, 208, 208);
+}
+.DivOfListContent {
+  align-self: center;
+}
+.DivOfListContentText {
+  font-weight: bold;
+  margin-left: 10px;
+}
+.DivOfListContentRole {
+  align-self: center;
+}
+.DivOfListContentView {
+  align-self: center;
+  margin-right: -70px;
+}
+.Photo {
+  height: auto;
+  max-height: 70px;
+  width: auto;
+  max-width: 70px;
+  border-radius: 50%;
+}

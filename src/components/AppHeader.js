@@ -7,11 +7,11 @@ import { styled } from "@mui/material/styles";
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   // background: "linear-gradient(to right, #3498db 30%, #ff6b81 90%)",
   // height: 80,
-  position: "fixed", // Set position to fixed
-  marginBottom: 50,
-  top: 0, // Align to the top of the viewport
+  // position: "fixed", 
+  // top: 0, // Align to the top of the viewport
   width: "100%", // Make the width 100% of the viewport
-  zIndex: theme.zIndex.drawer + 1, // Set a higher z-index to make sure it appears above other elements
+  // top: 0,
+  zIndex: theme.zIndex.drawer + 1,
   alignSelf: "center",
   backgroundColor: "transparent",
   boxShadow: "none",
@@ -38,11 +38,11 @@ const Navbar = () => {
   // Log information for debugging
   console.log("Current Path: ", location.pathname);
 
-  //   const routesWithoutNavbar = ["/login", "/"];
-  //   const shouldDisplayNavbar = !routesWithoutNavbar.includes(location.pathname);
+    const routesWithoutNavbar = ["/login", "/"];
+    const shouldDisplayNavbar = !routesWithoutNavbar.includes(location.pathname);
 
-  //   return shouldDisplayNavbar ? (
-  return (
+    return shouldDisplayNavbar ? (
+  // return (
     <StyledAppBar position="static">
       <Toolbar
         style={{
@@ -86,7 +86,7 @@ const Navbar = () => {
             className={isTabActive("/selectRole") ? "active" : ""}
             style={{ marginRight: 50, color: "black" }}
             color="inherit"
-            onClick={() => navigate("/selectRole")}
+            onClick={() => navigate("")}
           >
             Home
           </StyledButton>
@@ -118,7 +118,7 @@ const Navbar = () => {
             className={isTabActive("/login") ? "active" : ""}
             style={{ marginRight: 50, color: "black" }}
             onClick={() => {
-              // localStorage.clear();
+              localStorage.clear();
               navigate("/login");
             }}
           >
@@ -127,8 +127,7 @@ const Navbar = () => {
         </div>
       </Toolbar>
     </StyledAppBar>
-  );
-  //    : null;
+  ) : null;
 };
 
 export default Navbar;

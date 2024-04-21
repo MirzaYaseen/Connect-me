@@ -62,7 +62,8 @@ const Login = () => {
         toast.success(result?.data?.message);
         localStorage.setItem("userdetails", JSON.stringify(result?.data?.data));
 
-        navigate("/chooseSubject");
+        // navigate("/chooseSubject");
+        navigate("/selectRole");
       } catch (err) {
         toast.error(err?.response?.data?.message);
       }
@@ -177,8 +178,8 @@ const Login = () => {
             Forget Password?
           </Button>
           <Button
-            // onClick={handleSubmit}
-            onClick={()=>navigate('/selectRole')}
+            onClick={handleSubmit}
+            // onClick={()=>navigate('/selectRole')}
             variant="contained"
             style={{
               width: "250px",
