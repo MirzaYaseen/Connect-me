@@ -28,13 +28,13 @@ function ProtectedRoutes() {
               navigate("/expertsDashboard");
             } else {
               if (!quizPassed) {
-                navigate("/quiz"); // Redirect to quiz if quiz not passed
+                navigate("/quiz");
               } else {
                 navigate("/registerServiceProvider");
               }
             }
           } else if (userdetails?.role === "Student") {
-            navigate("/categoryChoose"); //services
+            navigate("/categoryChoose");
           } else {
             navigate("/selectRole");
           }

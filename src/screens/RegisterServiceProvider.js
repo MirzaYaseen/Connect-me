@@ -23,8 +23,7 @@ const centerStyle = {
   justifyContent: "center",
   alignItems: "center",
   minHeight: "100vh",
-  //   backgroundColor: 'red',
-  overflow: "hidden", // Hide overflow to prevent scrollbars
+  overflow: "hidden", 
   background: "linear-gradient(to left,  #87CEEB, #87CEEB, #F5F5F5)",
 };
 

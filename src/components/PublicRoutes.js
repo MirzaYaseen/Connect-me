@@ -30,13 +30,13 @@ function PublicRoutes() {
               navigate("/expertsDashboard");
             } else {
               if (!quizPassed) {
-                navigate("/expertsVerification"); // Redirect to quiz if quiz not passed
+                navigate("/expertsVerification"); 
               } else {
                 navigate("/registerServiceProvider");
               }
             }
           } else if (userdetails?.role === "Student") {
-            navigate("/categoryChoose");    //services
+            navigate("/categoryChoose");  
           } else {
             navigate("/selectRole");
           }

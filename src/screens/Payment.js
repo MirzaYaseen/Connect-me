@@ -14,7 +14,6 @@ import { BrowserRouter, Routes, Route, useNavigate,useLocation } from "react-rou
 const useStyles = makeStyles((theme) => ({
   container: {
     maxWidth: "500px",
-    // margin: "0 auto",
     display: "flex",
 
     marginLeft: "auto",
@@ -22,15 +21,15 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 10,
   },
   card: {
-    padding: 20, // Use theme.spacing for spacing
+    padding: 20, 
     borderRadius: 10,
   },
   cardElement: {
-    padding: 20, // Use theme.spacing for spacing
+    padding: 20,
     border: "1px solid #ccc",
     borderRadius: 5,
     marginTop: 5,
-    marginBottom: 5, // Use theme.spacing for spacing
+    marginBottom: 5,
   },
   inputsFields: {
     padding: 20,
@@ -45,19 +44,19 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     color: "white",
     fontSize: "16px",
-    padding: 10, // Use theme.spacing for spacing
+    padding: 10, 
     border: "none",
     borderRadius: 10,
     cursor: "pointer",
   },
   errorMessage: {
     color: "red",
-    marginTop: 10, // Use theme.spacing for spacing
+    marginTop: 10,
     textAlign: "center",
   },
   successMessage: {
     color: "green",
-    marginTop: 10, // Use theme.spacing for spacing
+    marginTop: 10, 
   },
 }));
 
@@ -83,7 +82,6 @@ const PaymentFormContent = ({ classes }) => {
       toast.error("Please fill in all fields.");
       return;
     }
-    // Create a payload object with the form data
     const payload = {
       cardHolderName,
       cardNumber,
@@ -93,7 +91,6 @@ const PaymentFormContent = ({ classes }) => {
     };
 
     try {
-      // Make a POST request to the payment API endpoint
       const response = await fetch(`${url}api/payment/process-payment`, {
         method: "POST",
         headers: {
@@ -102,12 +99,10 @@ const PaymentFormContent = ({ classes }) => {
         body: JSON.stringify(payload),
       });
 
-      // Check if the request was successful
       if (response.ok) {
         toast.success("Payment successful!");
         console.log("Payment successful!");
 
-        // Clear form fields
         setCardHolderName("");
         setCardNumber("");
         setExpirationDate("");
@@ -115,9 +110,9 @@ const PaymentFormContent = ({ classes }) => {
         setPhoneNumber("");
         setTimeout(() => {
           navigate("/services");
-        }, 3000); // Delay navigation for 3 seconds (3000 milliseconds)
+        }, 3000);
       } else {
-        // Handle payment error
+      
         toast.error("Payment failed.");
       }
     } catch (error) {
@@ -130,7 +125,6 @@ const PaymentFormContent = ({ classes }) => {
       <ToastContainer />
       <Card
         style={{
-          // backgroundColor: "red",
           width: "40%",
           display: "block",
           justifyContent: "center",
@@ -143,8 +137,6 @@ const PaymentFormContent = ({ classes }) => {
       >
         <div
           style={{
-            // backgroundColor: "red",
-
             display: "block",
             justifyContent: "center",
             alignItems: "center",
@@ -174,30 +166,16 @@ const PaymentFormContent = ({ classes }) => {
               marginRight: "auto",
             }}
           />
-          {/* <TextField
-            placeholder="Card Number"
-            value={cardNumber}
-            onChange={(e) => setCardNumber(e.target.value)}
-            style={{
-              padding: 10,
-              paddingLeft: 0,
-              borderRadius: 20,
-              width: "80%",
-              display: "flex",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          /> */}
           <TextField
             placeholder="Card Number"
             value={cardNumber}
             onChange={(e) => {
               const trimmedValue = e.target.value
                 .replace(/\s/g, "")
-                .substr(0, 16); // Remove any spaces and limit to 12 characters
+                .substr(0, 16);
               const formattedValue = trimmedValue
                 .replace(/\D/g, "")
-                .replace(/(\d{4})(?=\d)/g, "$1 "); // Add space after every 4 digits
+                .replace(/(\d{4})(?=\d)/g, "$1 "); 
               setCardNumber(formattedValue);
             }}
             style={{
@@ -220,30 +198,16 @@ const PaymentFormContent = ({ classes }) => {
               marginRight: 47,
             }}
           >
-            {/* <TextField
-              placeholder="Expiration Date"
-              value={expirationDate}
-              onChange={(e) => setExpirationDate(e.target.value)}
-              style={{
-                padding: 10,
-                paddingLeft: 0,
-                borderRadius: 20,
-                width: "45%",
-                display: "flex",
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            /> */}
             <TextField
               placeholder="Expiration Date"
               value={expirationDate}
               onChange={(e) => {
                 const trimmedValue = e.target.value
                   .replace(/\s/g, "")
-                  .substr(0, 5); // Remove any spaces and limit to 4 characters
+                  .substr(0, 5); 
                 const formattedValue = trimmedValue
                   .replace(/\D/g, "")
-                  .replace(/(\d{2})(?=\d)/, "$1/"); // Add space after 2 digits
+                  .replace(/(\d{2})(?=\d)/, "$1/"); 
                 setExpirationDate(formattedValue);
               }}
               style={{
@@ -256,21 +220,6 @@ const PaymentFormContent = ({ classes }) => {
                 marginRight: "auto",
               }}
             />
-            {/* 
-            <TextField
-              placeholder="Cvc"
-              value={cvv}
-              onChange={(e) => setCvv(e.target.value)}
-              style={{
-                padding: 10,
-                paddingLeft: 0,
-                borderRadius: 20,
-                width: "45%",
-                display: "flex",
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            /> */}
 
             <TextField
               placeholder="CVC"
@@ -278,7 +227,7 @@ const PaymentFormContent = ({ classes }) => {
               onChange={(e) => {
                 const trimmedValue = e.target.value
                   .replace(/\D/g, "")
-                  .substr(0, 3); // Remove any non-digit characters and limit to 3 characters
+                  .substr(0, 3); 
                 setCvv(trimmedValue);
               }}
               style={{
@@ -292,27 +241,14 @@ const PaymentFormContent = ({ classes }) => {
               }}
             />
           </div>
-          {/* <TextField
-            placeholder="Phone Number"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            style={{
-              padding: 10,
-              paddingLeft: 0,
-              borderRadius: 20,
-              width: "80%",
-              display: "flex",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          /> */}
+        
           <TextField
             placeholder="Phone Number"
             value={phoneNumber}
             onChange={(e) => {
               const trimmedValue = e.target.value
                 .replace(/\D/g, "")
-                .substr(0, 13); // Remove any non-digit characters and limit to 13 characters
+                .substr(0, 13);
               setPhoneNumber(trimmedValue);
             }}
             style={{

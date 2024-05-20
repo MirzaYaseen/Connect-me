@@ -5,15 +5,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { styled } from "@mui/material/styles";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  // background: "linear-gradient(to right, #3498db 30%, #ff6b81 90%)",
-  // height: 80,
-  // position: "fixed", 
-  // top: 0, // Align to the top of the viewport
-  width: "100%", // Make the width 100% of the viewport
-  // top: 0,
+  width: "100%", 
   zIndex: theme.zIndex.drawer + 1,
   alignSelf: "center",
-  backgroundColor: "transparent",
+  backgroundColor: "#CAF4FF",
   boxShadow: "none",
 }));
 
@@ -25,8 +20,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   marginLeft: theme.spacing(2),
   color: "black",
   "&.active": {
-    // color: "green",
-    backgroundColor: "#A6CF98", // Add this line to set the background color
+    backgroundColor: "#A6CF98",
     borderRadius: 25,
   },
 }));
@@ -35,14 +29,12 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isTabActive = (path) => location.pathname === path;
-  // Log information for debugging
   console.log("Current Path: ", location.pathname);
 
     const routesWithoutNavbar = ["/login", "/"];
     const shouldDisplayNavbar = !routesWithoutNavbar.includes(location.pathname);
 
     return shouldDisplayNavbar ? (
-  // return (
     <StyledAppBar position="static">
       <Toolbar
         style={{
@@ -51,9 +43,6 @@ const Navbar = () => {
           justifyContent: "space-between",
         }}
       >
-        {/* <StyledIconButton edge="start" color="inherit" aria-label="menu">
-          <MenuIcon />
-        </StyledIconButton> */}
         <div style={{ display: "flex", flexDirection: "row" }}>
           <Typography
             style={{

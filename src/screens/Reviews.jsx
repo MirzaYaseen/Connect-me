@@ -33,9 +33,6 @@ export default function Reviews() {
 
     getReviews();
   }, [value, cond]);
-  // useEffect(() => {
-  //   localStorage.setItem(`reviews_${userId}`, JSON.stringify(reviews));
-  // }, [reviews, userId]);
 
   const handleReviewSubmit = async () => {
     const reviewData = {
@@ -55,28 +52,14 @@ export default function Reviews() {
     } catch (err) {
       toast.error(err?.response?.data?.message);
     }
-    // const newReview = {
-    //   id: reviews.length + 1,
-    //   name: userdetails?.name,
-    //   mentorName: mentorName,
-    //   rating: value,
-    //   text: reviewText,
-    // };
-    // console.log('New review ya ha');
-    // console.log(newReview);
-
-    // setReviews((prevReviews) => [...prevReviews, newReview]);
+   
   };
 
-  // const handleDelete = (id) => {
-  //   const updatedReviews = reviews.filter((review) => review.id !== id);
-  //   setReviews(updatedReviews);
-  // };
 
   const handleDelete = async (id) => {
     const confirmed = window.confirm("Are you sure you want to delete this review?");
   if (!confirmed) {
-    return; // If user cancels, do nothing
+    return; 
   }
     try {
       const result = await axios.delete(`${url}review/getProductReview/${id}`);
@@ -90,7 +73,6 @@ export default function Reviews() {
   };
 
   return (
-    //style={{background:  "linear-gradient(to left,  #87CEEB, #87CEEB, #F5F5F5)",}}
     <div> 
       <ToastContainer
         position="top-right"
@@ -118,7 +100,7 @@ export default function Reviews() {
           
           flexDirection: "row",
           padding: 30,
-          flexWrap: "wrap", // Allow cards to wrap to the next line
+          flexWrap: "wrap",
         }}
       >
         {reviews.map((review) => (
@@ -131,7 +113,7 @@ export default function Reviews() {
               borderRadius: 30,
               padding: 30,
               backgroundColor: "#DDF2FD",
-              marginTop: 70, // Adjust the margin as needed
+              marginTop: 70,
             }}
             key={review.id}
           >
@@ -196,12 +178,6 @@ export default function Reviews() {
             setValue(newValue);
           }}
         />
-        {/* <TextField
-          placeholder='Enter Mentor Name'
-          style={{ marginTop: 30, width: 300 }}
-          value={mentorName}
-          onChange={(e) => setMentorName(e.target.value)}
-        /> */}
         <TextareaAutosize
           placeholder="Write your review..."
           value={reviewText}

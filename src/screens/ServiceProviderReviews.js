@@ -61,7 +61,7 @@ function MentorReviews() {
               borderRadius: 30,
               padding: 30,
               backgroundColor: "#DDF2FD",
-              margin: 50, // Adjust the margin as needed
+              margin: 50, 
             }}
             key={review.id}
           >
@@ -82,12 +82,6 @@ function MentorReviews() {
                   marginTop: -80,
                 }}
               />
-              {/* <BiSolidTrashAlt
-                style={{ cursor: 'pointer' }}
-                color='red'
-                size={22}
-                onClick={() => handleDelete(review.id)}
-              /> */}
             </div>
             <Typography style={{ fontSize: 22, fontWeight: "500" }}>
               {review?.name}

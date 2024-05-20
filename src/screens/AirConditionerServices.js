@@ -26,9 +26,9 @@ export default function AirconditionerServices() {
           justifyContent: "space-between",
           alignItems: "center",
           padding: 100,
-          backgroundImage: `url(${bg})`, // Set the background image
-          backgroundSize: "contain", // Optional: Set background size
-          backgroundPosition: "right", // Optional: Set background position
+          backgroundImage: `url(${bg})`,
+          backgroundSize: "contain", 
+          backgroundPosition: "right", 
           backgroundRepeat: "no-repeat",
           height: 360,
         }}

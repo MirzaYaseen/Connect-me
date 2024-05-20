@@ -33,13 +33,11 @@ const SelectRole = () => {
   return (
     <div
       style={{
-        // height: 670,
-        // backgroundColor: "#E6F7FF",
         alignSelf: "center",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        marginTop:110
+        marginTop:50
       }}
     >
       <div
@@ -61,7 +59,7 @@ const SelectRole = () => {
           }}
         >
           <Typography
-            style={{ fontSize: 80, textAlign: "center", display: "block", fontWeight:'600' }}
+            style={{ fontSize: 70, textAlign: "center", display: "block", fontWeight:'600' }}
           >
             Your trusted source for Services & Coaching.
           </Typography>
@@ -102,7 +100,6 @@ const SelectRole = () => {
             onClick={() => {
               UpdateUserAsStudent("Student");
             }}
-            // onClick={()=>navigate('/categoryChoose')}
             style={{
               backgroundColor:'#87CEEB',
               width: 300,
@@ -128,7 +125,6 @@ const SelectRole = () => {
             onClick={() => {
               UpdateUserAsStudent("Mentor");
             }}
-            // onClick={()=>navigate('/expertsVerification')}
             style={{
               backgroundColor: "#87CEEB",
               width: 300,

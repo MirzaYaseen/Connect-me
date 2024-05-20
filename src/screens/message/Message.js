@@ -9,10 +9,10 @@ function Message({ message, own, photo }) {
     <div className="Messagediv">
       {own ? (
         <div className="Owndiv">
-          <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+          <div style={{ display: "flex", justifyContent:'end', alignItems:'center', gap: 10 }}>
             <p className="OwndivText">{message.text}</p>
             <img
-              style={{ width: 25, height: 25, borderRadius: "50%" }}
+              style={{ width: 25, height: 25, borderRadius: "50%", alignItems:'end' }}
               src={userdetails?.photo}
               alt="No photo"
             />

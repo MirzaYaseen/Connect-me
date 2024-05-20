@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { css } from "@emotion/react";
 import signupImage from "../assets/images/1.jpg";
-import background from "../assets/images/back1.jpg";
+import upload from "../assets/images/uploadpic.png";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -46,6 +46,14 @@ const SignUpPage = () => {
   };
 
   const handleSubmit = async (event) => {
+    const passwordRegex = /^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+  const isPasswordValid = passwordRegex.test(password);
+
+  if (!isPasswordValid) {
+    setPasswordError(true);
+    toast.error("Password should be at least 8 characters and include at least one special character");
+    return;
+  }
     const data = new FormData();
     data.append("file", Attachment);
     data.append("upload_preset", "MuhammadTufailAli");
@@ -114,7 +122,6 @@ const SignUpPage = () => {
       });
   };
   const handleAvatarClick = () => {
-    // Show the file input when the avatar is clicked
     setIsFileInputVisible(true);
   };
 
@@ -133,10 +140,7 @@ const SignUpPage = () => {
       alignItems: "center",
       width: "100%",
       height: "85%",
-      
       marginTop:100,
-    // backgroundImage: `url(${background})`,
-    
       overflow:'hidden'
     }}
   >
@@ -152,24 +156,9 @@ const SignUpPage = () => {
       pauseOnHover
       theme="light"
     />
-      {/* <Card
-         style={{
-          display: "flex",
-        //   width: "400px",
-          justifyContent:'center',
-          height: "650px",
-          flexDirection: "row",
-          alignItems: "center",
-          backgroundColor: "#fff",
-          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
-          width: "1200px", // Adjust the card width as needed
-
-        }}
-      > */}
         <div
           style={{
             width: "70%",
-            // padding: "20px",
           }}
         >
           <Typography
@@ -194,13 +183,14 @@ const SignUpPage = () => {
                   marginTop: 5,
                   marginLeft: "auto",
                   marginRight: "auto",
-                  borderWidth: 3,
-                  borderStyle: "double",
+
+                
                   borderCollapse: "blue",
                 }}
               />
             ) : (
               <Avatar
+              src={upload}
                 alt="Default Avatar"
                 sx={{
                   width: 150,
@@ -208,8 +198,8 @@ const SignUpPage = () => {
                   marginTop: 2,
                   marginLeft: "auto",
                   marginRight: "auto",
-                  borderWidth: 3,
-                  borderStyle: "double",
+               
+            
                   borderCollapse: "blue",
                 }}
               />
@@ -309,9 +299,7 @@ const SignUpPage = () => {
         <div
           style={{
             width: "100%",
-            height: "100%", // Adjust the width of the image container
-            // Add padding for space
-            // backgroundColor: "pink",
+            height: "100%", 
           }}
         >
           <img
@@ -326,17 +314,6 @@ const SignUpPage = () => {
             }}
           />
         </div>
-        {/* <div
-          style={{
-            backgroundImage: `url(${signupImage})`,
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-            width: "50%", // Adjust the width of the image container
-            height: "100%",
-          }}
-        ></div>  */}
-       {/* </Card> */}
     </div>
   );
 };

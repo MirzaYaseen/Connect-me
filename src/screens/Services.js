@@ -50,9 +50,12 @@ function Screen() {
         }}
       >
         <Button
-          variant={isServiceSelected("Electrician") ? "contained" : "outlined"}
+          variant="outlined"
           color="primary"
-          sx={{ marginRight: 2, marginTop: 5 }}
+          sx={{ marginRight: 2, marginTop: 5,  backgroundColor: isServiceSelected("Electrician")
+          ? "#87CEEB"
+          : "none",
+        }}
           onClick={() => handleServiceClick("Electrician")}
           style={{
             display: "flex",
@@ -67,14 +70,13 @@ function Screen() {
               width: 270,
               height: 320,
               borderRadius: 10,
-              boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               backgroundImage: `url(${Electircian})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              marginTop: 3,
+              marginTop: 3
             }}
           ></Card>
           <IconButton
@@ -100,9 +102,11 @@ function Screen() {
         </Button>
         <Button
           style={{ display: "flex", flexDirection: "column", marginRight: 30 }}
-          variant={isServiceSelected("AirConditioning") ? "contained" : "outlined"}
+          variant="outlined"
           color="primary"
-          sx={{ marginRight: 2, marginTop: 5 }}
+          sx={{ marginRight: 2, marginTop: 5, backgroundColor: isServiceSelected("AirConditioning")
+          ? "#87CEEB"
+          : "none",}}
           onClick={() => handleServiceClick("AirConditioning")}
         >
           <Card
@@ -143,9 +147,11 @@ function Screen() {
         </Button>
         <Button
           style={{ display: "flex", flexDirection: "column", marginRight: 30 }}
-          variant={isServiceSelected("Carpenter") ? "contained" : "outlined"}
+          variant="outlined"
           color="primary"
-          sx={{ marginRight: 2, marginTop: 5 }}
+          sx={{ marginRight: 2, marginTop: 5,  backgroundColor: isServiceSelected("Carpenter")
+          ? "#87CEEB"
+          : "none",}}
           onClick={() => handleServiceClick("Carpenter")}
         >
           <Card
@@ -185,10 +191,12 @@ function Screen() {
           </Typography>
         </Button>
         <Button
-          style={{ display: "flex", flexDirection: "column", marginRight: 30 }}
-          variant={isServiceSelected("Painter") ? "contained" : "outlined"}
+          style={{ display: "flex", flexDirection: "column", marginRight: 30,  }}
+          variant="outlined"
           color="primary"
-          sx={{ marginRight: 2, marginTop: 5 }}
+          sx={{ marginRight: 2, marginTop: 5, backgroundColor: isServiceSelected("Painter")
+          ? "#87CEEB"
+          : "none",}}
           onClick={() => handleServiceClick("Painter")}
         >
           <Card

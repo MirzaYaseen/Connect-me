@@ -14,27 +14,24 @@ import { makeStyles } from "@mui/styles";
 // import backgroundImage from '../assets/images/background.jpg'
 const useStyles = makeStyles((theme) => ({
   backgroundContainer: {
-    // background: '#E6F7FF',
-    // backgroundImage: `url(${ExpertsTools})`,
-    // backgroundSize: "cover",
-    // backgroundPosition: "center",
-    background: "linear-gradient(to left,  #87CEEB, #87CEEB, #F5F5F5)",
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    display: "block",
-    alignItems: "center", // Center vertically
-    justifyContent: "center", // Center horizontally
+    backgroundColor: "#87CEEB", // Set background color here
+    width: "100vw", // Fill the entire viewport width
+    height: "100vh", // Fill the entire viewport height
+    overflowX: "hidden", // Disable horizontal scrolling
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    maxWidth:'100%'
   },
   container: {
-    // backgroundColor: 'rgba(255, 255, 255, 0.9)',
+  
     // padding: '10px',
     //  elevation:3,
+    
     borderRadius: "10px",
-    height: 450,
-    marginTop: 70,
+  height:'100hv',
+
+    marginBottom:10
 
     // boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
   },

@@ -10,18 +10,12 @@ const CongratulationSeller = () => {
   return (
     <div
       style={{
-        height: 680,
-    
-        // backgroundColor: "#E6F7FF",
-        // backgroundImage: `url(${bg})`,
-        // backgroundSize: "contain", 
-        // backgroundPosition: "right", // Optional: Set background position
-        alignSelf: "center",
+        minHeight: "100vh",
         display: "flex",
-        alignItems: "center",
+        flexDirection: "column",
         justifyContent: "center",
-        // backgroundRepeat:'no-repeat',
-        overflow:'hidden'
+        alignItems: "center",
+        padding: "0 20px", // Added padding for better spacing on smaller screens
         
       }}
     >
@@ -38,25 +32,25 @@ const CongratulationSeller = () => {
       >
         <div
           style={{
-            width: "95%",
+            width: "100%",
 
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             marginLeft: "auto",
             marginRight: "auto",
-            marginTop: 100,
+            marginTop: 60,
           }}
         >
           <Typography
-            style={{ fontSize: 90, textAlign: "center", display: "block" }}
+            style={{ fontSize: 70, textAlign: "center", display: "flex" }}
           >
             Congratulations,
           </Typography>
         </div>
         {/* <div style={{display:'flex', flexDirection:'row'}}>  */}
 
-        <Typography style={{ fontSize: 90, textAlign: "center", top:0 }}>
+        <Typography style={{ fontSize: 70, textAlign: "center", top:0 }}>
           you have been registered
         </Typography>
         <div
@@ -69,7 +63,7 @@ const CongratulationSeller = () => {
           <Typography
             style={{
               color: "black",
-              fontSize: 90,
+              fontSize: 70,
               textAlign: "center",
               marginLeft: 15,
             }}
@@ -79,7 +73,7 @@ const CongratulationSeller = () => {
           <Typography
             style={{
               color: "green",
-              fontSize: 90,
+              fontSize: 70,
               textAlign: "center",
               marginLeft: 15,
             }}

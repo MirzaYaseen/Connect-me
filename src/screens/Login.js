@@ -73,8 +73,6 @@ const Login = () => {
   return (
     <div
       style={{
-        // background: "#E6F7FF",
-        // backgroundImage: `url(${background})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
@@ -100,18 +98,6 @@ const Login = () => {
         pauseOnHover
         theme="light"
       />
-      {/* <Card
-        style={{
-          display: "flex",
-        //   width: "900px",
-          height: "650px",
-          flexDirection: "row",
-          alignItems: "center",
-          backgroundColor: "#fff",
-          boxShadow: "0px 0px 20px rgba(0, 0, 0, 0.2)",
-          width: "1200px", // Adjust the card width as needed
-        }}
-      > */}
        
         <div
           style={{
@@ -179,7 +165,6 @@ const Login = () => {
           </Button>
           <Button
             onClick={handleSubmit}
-            // onClick={()=>navigate('/selectRole')}
             variant="contained"
             style={{
               width: "250px",
@@ -208,9 +193,7 @@ const Login = () => {
         <div
           style={{
             width: "100%",
-            height: "100%", // Adjust the width of the image container
-            // Add padding for space
-            // backgroundColor: "pink",
+            height: "100%",
           }}
         >
           <img
@@ -223,7 +206,6 @@ const Login = () => {
             }}
           />
         </div>
-      {/* </Card> */}
     </div>
   );
 };

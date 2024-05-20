@@ -158,40 +158,11 @@ function Messenger() {
         style={{ display: "flex", overflow: "hidden", }}>
         <div className="ChatScreen" >
           <div className="ChatMenu" style={{backgroundColor:'#E0F4FF', height:740 }}>
-            {/* <div className="ChatMenuWrapper">
-            <Typography>ashcjsa</Typography>
-              {conversation.map((c) => {
-                if (
-                  c.members.includes(arrivalMessage?.sender) &&
-                  c.members.includes(currentUser)
-                ) {
-                  c.lastMessage = lastMessage;
-                }
-
-                return (
-                  <div
-                    //Ab hum jab click kara ga chat pa to vo conversation mil  jay gi
-                    //Or hum us conversation id ko use karta hova sari chat hasil kar la ga
-                    onClick={() => {
-                      setcurrentChat(c);
-                    }}>
-                    <Conversation
-                      conversation={c}
-                      currentUser={currentUser}
-                      lastMessage={c.lastMessage}
-                    />
-                  </div>
-                );
-              })}
-            </div> */}
              <img
                     className="OtherUserPhoto2"
                     src={UserPhoto}
                     alt="No photo"
                   />
-                  {/* <Button style={{backgroundColor:'#FAC213',  textAlign:'center',marginLeft:110, marginTop:10, width:200}}>
-                  Find Mentors
-                  </Button> */}
                   <div style={{display:'flex',textAlign:'center', marginTop:20, backgroundColor:'azure', width:200, height:50, justifyContent:'center', marginLeft:'auto', alignItems:'center', marginRight:'auto', borderRadius:20}}>
                     
                     <Typography style={{  justifyContent:'center', alignItems:'center'}}>Find Service Provider</Typography>
@@ -199,7 +170,6 @@ function Messenger() {
                
           </div>
           <div className="ChatBox" style={{backgroundColor:'white'}}>
-            {/* To Take input */}
             {currentChat ? (
               <div className="ChatBoxWrapper" style={{backgroundColor:'white'}}>
                 <div className="ChatUserName">
@@ -239,7 +209,6 @@ function Messenger() {
                         (member) => member !== currentUser
                       );
                       console.log("The recivere id is" + receiverId);
-                      //We are sending message to server using socket io
                       socket.current.emit("sendMessage", {
                         senderId: currentUser,
                         receiverId,
@@ -262,8 +231,7 @@ function Messenger() {
                         className="InputMessageContainer"
                         name="message"
                         type="text"
-                        
-                        // className="textArea"
+        
                       />
 
                       <button style={{color:'white', background:'cornflowerblue'}} type="submit" className="SendButton">
@@ -294,8 +262,6 @@ function Messenger() {
 
                 return (
                   <div
-                    //Ab hum jab click kara ga chat pa to vo conversation mil  jay gi
-                    //Or hum us conversation id ko use karta hova sari chat hasil kar la ga
                     onClick={() => {
                       setcurrentChat(c);
                     }}>

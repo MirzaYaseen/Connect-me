@@ -229,8 +229,8 @@ const ExpertsDashboard = () => {
               marginRight: "20px",
               fontSize: "17px",
               fontFamily: "Roboto",
-              backgroundColor: "#3f51b5",
-              color: "#fff",
+              backgroundColor: "#87CEEB",
+              color: "black",
               textAlign: "center",
               width:200
             }}
